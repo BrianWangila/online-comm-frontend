@@ -113,6 +113,7 @@
 
   .order-hidden {
     display:contents;
+    
   }
 
   .results-card {
@@ -129,7 +130,7 @@
   }
 
   .super-content {
-    margin-left: 5vw;
+    margin-left: 2vw;
     text-align: left;
     margin-right: 2vw;
   }
@@ -141,8 +142,9 @@
   }
   
   .vertical-line {
-    color: rgb(199, 18, 18);
-    width: 10px;
-    height: 20px;
+    height: 35vh;
+    border-left: 2px solid rgb(180, 176, 176);
+    margin-left: 2vw;
+
   }
 }
