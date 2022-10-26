@@ -1,0 +1,66 @@
+.search-page {
+    background-image: url("/public/images/background_phone.png");
+    min-height: 85vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+}
+
+.search-div {
+    background: #00000086;
+    padding:30px 10px;
+    border-radius: 20px;
+}
+
+.search-page-form {
+    margin: 30px auto 10px ;
+    background: white;
+    padding: 5px;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-page-form input {
+    height: 35px;
+    width: 200px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    background: transparent;
+
+}
+
+.search-page-form img {
+    height: 30px;
+    filter: invert(68%) sepia(1%) saturate(244%) hue-rotate(202deg) brightness(86%) contrast(94%);
+}
+
+.search-page-form button {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+#search-cancel {
+    height: 20px;
+}
+
+@media only screen and (min-width:768px) {
+    .search-page-form {
+        width: 450px;
+        height: 50px;
+    }
+    .search-page-form input{
+        width: 380px;
+    }
+}
