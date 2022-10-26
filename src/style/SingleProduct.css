@@ -25,9 +25,6 @@
   margin-left: 8vw;
 }
 
-.product-details Typography {
-  color: red;
-}
 
 .visit-shop {
   display: flex;
@@ -36,4 +33,10 @@
   margin-top: 1vh;
   margin-bottom: 2vh;
   border-radius: 10px;
+}
+
+
+@media only screen and (min-width: 430px) {
+
+
 }
