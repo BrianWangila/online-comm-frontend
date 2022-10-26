@@ -16,6 +16,7 @@ function App() {
         <div style={{display:"flex",flexDirection:"column"}}>
           <button onClick={() => navigate("/mycomponent")}>Mycomponent</button>
           <button onClick={() => navigate("/navbar")}>Navbar</button>
+          <button onClick={() => navigate("/signup")}>SignUp</button>
           </div>
           }
           />
