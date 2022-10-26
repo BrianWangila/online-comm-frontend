@@ -1,8 +1,6 @@
 import React from 'react'
 import '../style/Footer.css'
-// import TwitterIcon from '@mui/icons-material/Twitter'
-// import LinkedInIcon from '@mui/icons-material/LinkedIn'
-// import FacebookRoundedIcon from '@mui/icons-material/FacebookRoundedIcon'
+// import FontAwesomeIcon from ''
 
 
 
@@ -46,22 +44,12 @@ function Footer() {
 
         <div className='footer-icons'>
           <ul>
-            <li>Icon</li>
-            <li>Icon</li>
-            <li>Icon</li>
-            <li>Icon</li>
+          {/* <FontAwesomeIcon icon="fa-brands fa-whatsapp" /> */}
+            <li><i class="fa-brands fa-whatsapp"></i></li>
+            <li><i class="fa-brands fa-twitter"></i></li>
+            <li><i class="fa-brands fa-facebook"></i></li>
+            <li><i class="fa-brands fa-instagram"></i></li>
           </ul>
-          {/* <div>
-            <TwitterIcon size="large"
-            aria-label="add" 
-            sx={{width:25, height:25, marginLeft:2}} />
-            <LinkedInIcon size="large"
-            aria-label="add" 
-            sx={{width:25, height:25, marginLeft:2}} />
-            <FacebookRoundedIcon size="large"
-            aria-label="add" 
-            sx={{width:25, height:25, fontsize: "40px", marginLeft: 2}} />
-          </div> */}
           <p>All rights reserved @2022</p>
         </div>
       </footer>
