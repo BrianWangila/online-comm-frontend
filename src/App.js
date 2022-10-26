@@ -10,9 +10,7 @@ function App() {
         <Route path="/mycomponent">
           {/* mycomponent goes here */}
         </Route>
-        <Route exact path="/">
-          <button onClick={() => navigate("/mycomponent")}>Mycomponent</button>
-        </Route>
+        <Route exact path="/" element={<button onClick={() => navigate("/mycomponent")}>Mycomponent</button>}/>
       </Routes>
     </div>
   );
