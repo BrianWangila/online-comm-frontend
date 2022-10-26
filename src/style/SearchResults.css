@@ -14,7 +14,7 @@
 }
 
 .row {
-  margin-left: 2vw;
+  margin-left: 3vw;
   margin-top: -10vh;
   margin-bottom: 5vh;
 }
@@ -22,16 +22,22 @@
 .results-card {
   width: 45vw;
   margin: 1vw;
-  
+  height: -5vh;
+  margin-bottom: 1vh;
 }
+
 
 .results-card img {
-  height: 20vh;
-  margin-left: -10vw;
+  border-radius: 10px;
+  height: 17vh;
+  width: 40vw;
+  margin-left: -1vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 
-.results-card span {
-  /* color: orangered; */
+.content span {
+  color: orangered;
 }
 
 .results-card h6 {
@@ -53,6 +59,26 @@
   width: 45vw;
   margin-left: -3vw;
   border-radius: 0 0 15px 15px;
+  margin-top: 2vh;
 }
 
 
+
+
+@media only screen and (min-width: 430px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .visit-shop {
+    background-color: orangered;
+    width: 50vw;
+    margin-left: -3vw;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .results-card img {
+    height: 30vh;
+  }
+  
+}
