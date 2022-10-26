@@ -31,12 +31,14 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [location, setlocation] = useState("");
   const [password, setPassword] = useState("");
+  const [password_confirmation, setPassword_confirmation] = useState("");
   function handleSubmit(event) {
     const formData = {
       username: username,
       email: email,
       location: location,
       password: password,
+      password_confirmation: password_confirmation
     };
     console.log(formData);
     event.preventDefault();
@@ -119,6 +121,19 @@ export default function SignUp() {
                   autoComplete="new-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)} placeholder="Password"
+                />
+                 </Grid>
+                 <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password_confirmation"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                  value={password_confirmation}
+                  onChange={(e) => setPassword_confirmation(e.target.value)} placeholder="Password_confirmation"
                 />
               </Grid>
               <Grid item xs={12}>
