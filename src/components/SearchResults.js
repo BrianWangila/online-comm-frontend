@@ -12,15 +12,15 @@ function SearchResults() {
     <>
       <div className='search-page'>
         <div className='flex-search'>
-          <div className='search-input'>
-            <TextField id="outlined-basic" label="Product searched" variant="outlined" />
-          </div>
+          <form className='search-input'>
+            <input type="search" value="Samsung A51" className='form-control'/>
+          </form>
 
           <div className='orderby'>
-            <select class="form-select" aria-label="Default select example">
+            <select className="form-select" >
               <option selected>Price</option>
-              <option value="1">Product</option>
-              <option value="2">Ratings</option>
+              <option value="Products">Product</option>
+              <option value="Ratings">Ratings</option>
             </select>
           </div>
         </div>
@@ -35,10 +35,10 @@ function SearchResults() {
               <Typography variant="body2" style={{color: "red"}}>Ksh.28,999/-</Typography>
               <Typography variant="body2" color="text.secondary">Rating: <span>4.3 / 5.0</span></Typography>
               <Typography variant="body2" color="text.secondary">Delivery: <span>250/-</span></Typography>
-              <h6 variant="body2" color="text.secondary">JUMIA</h6>
+              <h6 variant="body2" >JUMIA</h6>
             </CardContent>
             <center className='visit-shop'>
-              <Button style={{color: "whitesmoke"}} size="small">VISIT SHOP</Button>
+              <Button style={{color: "whitesmoke"}} size="medium">VISIT SHOP</Button>
             </center>
           </Card>
 
@@ -51,10 +51,10 @@ function SearchResults() {
               <Typography variant="body2" style={{color: "red"}}>Ksh.28,999/-</Typography>
               <Typography variant="body2" color="text.secondary">Rating: <span>4.3 / 5.0</span></Typography>
               <Typography variant="body2" color="text.secondary">Delivery: <span>250/-</span></Typography>
-              <h6 variant="body2" color="text.secondary">JUMIA</h6>
+              <h6 variant="body2" >JUMIA</h6>
             </CardContent>
             <center className='visit-shop'>
-              <Button size="small">VISIT SHOP</Button>
+              <Button style={{color: "whitesmoke"}} size="medium">VISIT SHOP</Button>
             </center>
           </Card>
 
@@ -67,10 +67,10 @@ function SearchResults() {
               <Typography variant="body2" style={{color: "red"}}>Ksh.28,999/-</Typography>
               <Typography variant="body2" color="text.secondary">Rating: <span>4.3 / 5.0</span></Typography>
               <Typography variant="body2" color="text.secondary">Delivery: <span>250/-</span></Typography>
-              <h6 variant="body2" color="text.secondary">JUMIA</h6>
+              <h6 variant="body2" >JUMIA</h6>
             </CardContent>
             <center className='visit-shop'>
-              <Button size="small">VISIT SHOP</Button>
+              <Button style={{color: "whitesmoke"}} size="medium">VISIT SHOP</Button>
             </center>
           </Card>
         </div>
