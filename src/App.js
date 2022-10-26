@@ -3,6 +3,8 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SearchPage from './components/SearchPage';
 import SignUp from './components/SignUp';
+import Login from './components/Login';
+
 function App() {
   const navigate = useNavigate()
   return (
@@ -10,8 +12,12 @@ function App() {
       <Routes>
         {/* add your routes here */}
         <Route path="/signup" element={ <SignUp/> }>
+          
           {/* mycomponent goes here */}
         </Route>
+        <Route path="/login" element={ <Login/> }>
+        </Route>
+        
         <Route path="/navbar" element={<Navbar/>}/>
         <Route path="/search" element={<>
         <Navbar/>
@@ -23,6 +29,7 @@ function App() {
           <button onClick={() => navigate("/navbar")}>Navbar</button>
           <button onClick={() => navigate("/signup")}>SignUp</button>
           <button onClick={() => navigate("/search")}>Search</button>
+          <button onClick={() => navigate("/login)")}>Login</button>
           </div>
           }
           />
