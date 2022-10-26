@@ -1,6 +1,7 @@
 import React from 'react'
 import '../style/SearchResults.css'
-import { TextField, Button, Card, Typography } from '@material-ui/core'
+import { Button, Card, Typography } from '@material-ui/core'
+import Navbar from './Navbar'
 
 
 
@@ -10,6 +11,7 @@ function SearchResults() {
 
   return (
     <>
+    <Navbar />
       <div className='search-page'>
         <div className='flex-search'>
           <form className='search-input'>
