@@ -20,6 +20,9 @@ function SearchResults() {
           </form>
 
           <div className='orderby'>
+            <div className='order-hidden'>
+              <p>Order by: </p>
+            </div>
             <select className="form-select">
               <option selected>Price</option>
               <option value="Products">Product</option>
@@ -29,72 +32,74 @@ function SearchResults() {
         </div>
 
         <div className='row'>
-          <Card className='results-card' style={{borderRadius: 15+"px", background: "#D9D9D9", height: 51+"vh"}} >
-            <div className='content'>
-              <img src='https://thumbs.dreamstime.com/b/samsung-galaxy-s-plus-mobile-phone-taipei-taiwan-march-studio-shot-new-cellphone-reflective-white-surface-141609046.jpg' alt='phone'/>
-              <Typography gutterBottom variant="h6" component="div">
-                Samsung Galaxy A51 | 128gb/4gb | Blue
-              </Typography>
-              <Typography variant="body2" style={{color: "red"}}>Ksh.28,999/-</Typography>
-              <Typography variant="body2" color="text.secondary">Rating: <span>4.3 / 5.0</span></Typography>
-              <Typography variant="body2" color="text.secondary">Delivery: <span>250/-</span></Typography>
-              <h6 variant="body2" >JUMIA</h6>
-            </div>
-            <center className='visit-shop'>
-              <Button style={{color: "whitesmoke"}} size="medium">VISIT SHOP</Button>
-            </center>
-          </Card>
-
-          <Card className='results-card' style={{borderRadius: 15+"px", background: "#D9D9D9", height: 51+"vh"}}>
-            <div className='content'>
+          <div className='results-card'>
             <img src='https://thumbs.dreamstime.com/b/samsung-galaxy-s-plus-mobile-phone-taipei-taiwan-march-studio-shot-new-cellphone-reflective-white-surface-141609046.jpg' alt='phone'/>
-
-              <Typography gutterBottom variant="h6" component="div">
-                Samsung Galaxy A51 | 128gb/4gb | Blue
-              </Typography>
-              <Typography variant="body2" style={{color: "red"}}>Ksh.28,999/-</Typography>
-              <Typography variant="body2" color="text.secondary">Rating: <span>4.3 / 5.0</span></Typography>
-              <Typography variant="body2" color="text.secondary">Delivery: <span>250/-</span></Typography>
-              <h6 variant="body2" >JUMIA</h6>
-            </div>
-            <center className='visit-shop'>
-              <Button style={{color: "whitesmoke"}} size="medium">VISIT SHOP</Button>
-            </center>
-          </Card>
-
-          <Card className='results-card' style={{borderRadius: 15+"px", background: "#D9D9D9", height: 51+"vh"}}>
+            <div className='vertical-line'></div>
+            <div className='super-content'>
             <div className='content'>
-            <img src='https://thumbs.dreamstime.com/b/samsung-galaxy-s-plus-mobile-phone-taipei-taiwan-march-studio-shot-new-cellphone-reflective-white-surface-141609046.jpg' alt='phone'/>
-
               <Typography gutterBottom variant="h6" component="div">
                 Samsung Galaxy A51 | 128gb/4gb | Blue
               </Typography>
-              <Typography variant="body2" style={{color: "red"}}>Ksh.28,999/-</Typography>
+              <Typography className='details'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation..."</Typography>
+              <Typography variant="body2" >Price: <span>Ksh.28,999/-</span></Typography>
               <Typography variant="body2" color="text.secondary">Rating: <span>4.3 / 5.0</span></Typography>
               <Typography variant="body2" color="text.secondary">Delivery: <span>250/-</span></Typography>
-              <h6 variant="body2" >JUMIA</h6>
+              {/* <Typography variant="body2" color="text.secondary">Mode: <span>Pay after</span></Typography> */}
+              <h6 variant="body2">JUMIA</h6>
             </div>
-            <center className='visit-shop'>
+            <div className='visit-shop'>
               <Button style={{color: "whitesmoke"}} size="medium">VISIT SHOP</Button>
-            </center>
-          </Card>
+            </div>
+            </div>
+          </div>
 
-          <Card className='results-card' style={{borderRadius: 15+"px", background: "#D9D9D9", height: 51+"vh"}}>
+          <div className='results-card'>
+            <img src='https://thumbs.dreamstime.com/b/samsung-galaxy-s-plus-mobile-phone-taipei-taiwan-march-studio-shot-new-cellphone-reflective-white-surface-141609046.jpg' alt='phone'/>
             <div className='content'>
-            <img src='https://thumbs.dreamstime.com/b/samsung-galaxy-s-plus-mobile-phone-taipei-taiwan-march-studio-shot-new-cellphone-reflective-white-surface-141609046.jpg' alt='phone'/>
-
               <Typography gutterBottom variant="h6" component="div">
                 Samsung Galaxy A51 | 128gb/4gb | Blue
               </Typography>
               <Typography variant="body2" style={{color: "red"}}>Ksh.28,999/-</Typography>
               <Typography variant="body2" color="text.secondary">Rating: <span>4.3 / 5.0</span></Typography>
               <Typography variant="body2" color="text.secondary">Delivery: <span>250/-</span></Typography>
-              <h6 variant="body2" >JUMIA</h6>
+              <h6 variant="body2">JUMIA</h6>
             </div>
             <center className='visit-shop'>
               <Button style={{color: "whitesmoke"}} size="medium">VISIT SHOP</Button>
             </center>
-          </Card>
+          </div>
+
+          <div className='results-card'>
+            <img src='https://thumbs.dreamstime.com/b/samsung-galaxy-s-plus-mobile-phone-taipei-taiwan-march-studio-shot-new-cellphone-reflective-white-surface-141609046.jpg' alt='phone'/>
+            <div className='content'>
+              <Typography gutterBottom variant="h6" component="div">
+                Samsung Galaxy A51 | 128gb/4gb | Blue
+              </Typography>
+              <Typography variant="body2" style={{color: "red"}}>Ksh.28,999/-</Typography>
+              <Typography variant="body2" color="text.secondary">Rating: <span>4.3 / 5.0</span></Typography>
+              <Typography variant="body2" color="text.secondary">Delivery: <span>250/-</span></Typography>
+              <h6 variant="body2">JUMIA</h6>
+            </div>
+            <center className='visit-shop'>
+              <Button style={{color: "whitesmoke"}} size="medium">VISIT SHOP</Button>
+            </center>
+          </div>
+
+          <div className='results-card'>
+            <img src='https://thumbs.dreamstime.com/b/samsung-galaxy-s-plus-mobile-phone-taipei-taiwan-march-studio-shot-new-cellphone-reflective-white-surface-141609046.jpg' alt='phone'/>
+            <div className='content'>
+              <Typography gutterBottom variant="h6" component="div">
+                Samsung Galaxy A51 | 128gb/4gb | Blue
+              </Typography>
+              <Typography variant="body2" style={{color: "red"}}>Ksh.28,999/-</Typography>
+              <Typography variant="body2" color="text.secondary">Rating: <span>4.3 / 5.0</span></Typography>
+              <Typography variant="body2" color="text.secondary">Delivery: <span>250/-</span></Typography>
+              <h6 variant="body2">JUMIA</h6>
+            </div>
+            <center className='visit-shop'>
+              <Button style={{color: "whitesmoke"}} size="medium">VISIT SHOP</Button>
+            </center>
+          </div>
         </div>
 
       </div>
