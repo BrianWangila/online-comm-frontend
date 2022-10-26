@@ -2,6 +2,7 @@ import React from 'react'
 import '../style/SearchResults.css'
 import { Button, Card, Typography } from '@material-ui/core'
 import Navbar from './Navbar'
+import Footer from './Footer'
 
 
 
@@ -97,6 +98,7 @@ function SearchResults() {
         </div>
 
       </div>
+      <Footer />
     </>
   )
 }

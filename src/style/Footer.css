@@ -1,0 +1,34 @@
+
+.footer {
+  margin-top: 1vh;
+  background-color: #2B2A2A;
+}
+
+.footer-murife {
+  background-color: black;
+  height: 5vh;
+  padding-top: 1vh;
+  color: white;
+}
+
+.footer-icons {
+  height: 13vh;
+  
+}
+
+.footer-icons p {
+  color: white;
+  font-size: small;
+  margin-top: 5.5vh;
+  
+}
+
+.footer-icons ul {
+  color: white;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 60vw;
+  margin-top: 3vh;
+  margin-left: 18vw;
+}
