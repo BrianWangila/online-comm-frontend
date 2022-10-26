@@ -1,8 +1,9 @@
 import React from 'react'
 import '../style/SearchResults.css'
-import { Button, Card, Typography } from '@material-ui/core'
+import { Button, Typography } from '@material-ui/core'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import { Link } from 'react-router-dom'
 
 
 
@@ -32,7 +33,7 @@ function SearchResults() {
         </div>
 
         <div className='row'>
-          <div className='results-card'>
+          <Link className='results-card' to='/single-product'>
             <img src='https://thumbs.dreamstime.com/b/samsung-galaxy-s-plus-mobile-phone-taipei-taiwan-march-studio-shot-new-cellphone-reflective-white-surface-141609046.jpg' alt='phone'/>
             <div className='vertical-line'></div>
               <div className='super-content'>
@@ -51,7 +52,7 @@ function SearchResults() {
                 <Button style={{color: "whitesmoke"}} size="medium">VISIT SHOP</Button>
               </div>
             </div>
-          </div>
+          </Link>
 
           <div className='results-card'>
             <img src='https://thumbs.dreamstime.com/b/samsung-galaxy-s-plus-mobile-phone-taipei-taiwan-march-studio-shot-new-cellphone-reflective-white-surface-141609046.jpg' alt='phone'/>

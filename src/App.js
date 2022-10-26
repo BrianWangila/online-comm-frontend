@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SearchResults from './components/SearchResults';
 import Footer from './components/Footer';
+import SingleProduct from './components/SingleProduct';
 
 function App() {
   const navigate = useNavigate()
@@ -16,6 +17,7 @@ function App() {
         <Route path="/navbar" element={<Navbar/>}/>
         <Route path='/search-results' element={<SearchResults />}></Route>
         <Route path='/footer' element={<Footer />}></Route>
+        <Route path='/single-product' element={<SingleProduct />}></Route>
         <Route exact path="/" element={
         <div style={{display:"flex",flexDirection:"column"}}>
           <button onClick={() => navigate("/mycomponent")}>Mycomponent</button>
