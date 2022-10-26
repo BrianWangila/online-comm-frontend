@@ -1,6 +1,6 @@
 import React from 'react'
 import '../style/SearchResults.css'
-import { TextField, Button, Card, CardContent, Typography } from '@material-ui/core'
+import { TextField, Button, Card, Typography } from '@material-ui/core'
 
 
 
