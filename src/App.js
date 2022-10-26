@@ -1,6 +1,7 @@
 import './App.css';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import SearchPage from './components/SearchPage';
 
 function App() {
   const navigate = useNavigate()
@@ -12,10 +13,15 @@ function App() {
           {/* mycomponent goes here */}
         </Route>
         <Route path="/navbar" element={<Navbar/>}/>
+        <Route path="/search" element={<>
+        <Navbar/>
+        <SearchPage/>
+        </>}/>
         <Route exact path="/" element={
         <div style={{display:"flex",flexDirection:"column"}}>
           <button onClick={() => navigate("/mycomponent")}>Mycomponent</button>
           <button onClick={() => navigate("/navbar")}>Navbar</button>
+          <button onClick={() => navigate("/search")}>Search</button>
           </div>
           }
           />
