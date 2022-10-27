@@ -38,6 +38,7 @@ function App() {
           <button onClick={() => navigate("/login")}>Login</button>
           <button onClick={() => navigate("/search-results")}>Search Results</button>
           <button onClick={() => navigate("/footer")}>Footer</button>
+          <button onClick={() => navigate("/single-product")}>Single Product</button>
         </div>
           }
           />

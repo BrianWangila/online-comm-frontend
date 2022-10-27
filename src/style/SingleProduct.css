@@ -39,6 +39,15 @@
   color: orangered;
 }
 
+.product-page {
+  margin-top: 3vh;
+  margin-bottom: 10vh;
+}
+
+.flex-search h6{
+  margin-left: 2vw;
+}
+
 
 @media only screen and (min-width: 430px) {
 
