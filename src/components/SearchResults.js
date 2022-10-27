@@ -14,7 +14,7 @@ function SearchResults() {
   return (
     <>
     <Navbar />
-      <div className='search-page'>
+      <div className='search-results-page'>
         <div className='flex-search'>
           <form className='search-input'>
             <input type="search" value="Samsung A51" className='form-control'/>
@@ -33,8 +33,10 @@ function SearchResults() {
         </div>
 
         <div className='row'>
-          <Link className='results-card' to='/single-product'>
-            <img src='https://thumbs.dreamstime.com/b/samsung-galaxy-s-plus-mobile-phone-taipei-taiwan-march-studio-shot-new-cellphone-reflective-white-surface-141609046.jpg' alt='phone'/>
+          <div className='results-card' >
+            <Link to='/single-product'>
+              <img src='https://thumbs.dreamstime.com/b/samsung-galaxy-s-plus-mobile-phone-taipei-taiwan-march-studio-shot-new-cellphone-reflective-white-surface-141609046.jpg' alt='phone'/>
+            </Link>
             <div className='vertical-line'></div>
               <div className='super-content'>
               <div className='content'>
@@ -52,7 +54,7 @@ function SearchResults() {
                 <Button style={{color: "whitesmoke"}} size="medium">VISIT SHOP</Button>
               </div>
             </div>
-          </Link>
+          </div>
 
           <div className='results-card'>
             <img src='https://thumbs.dreamstime.com/b/samsung-galaxy-s-plus-mobile-phone-taipei-taiwan-march-studio-shot-new-cellphone-reflective-white-surface-141609046.jpg' alt='phone'/>

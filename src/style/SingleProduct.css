@@ -26,7 +26,7 @@
 }
 
 
-.visit-shop {
+.visit-shop-b {
   display: flex;
   justify-content: center;
   margin: auto;
@@ -35,8 +35,40 @@
   border-radius: 10px;
 }
 
+.product-details span {
+  color: orangered;
+}
+
+.product-page {
+  margin-top: 3vh;
+  margin-bottom: 10vh;
+}
+
+.flex-search h6{
+  margin-left: 2vw;
+}
+
 
 @media only screen and (min-width: 430px) {
 
+  .product-flex {
+    display: flex;
+    align-items: center;
+    width: 70vw;
+    margin: auto;
+    margin-bottom: 10vh;
+  }
 
+  .product-dets {
+    margin-top: -7vh;
+  }
+
+  .visit-shop-b {
+    margin-left: 20vw;
+  }
+
+  .product-page {
+    margin-top: 3vh;
+    margin-bottom: 10vh;
+  }
 }
