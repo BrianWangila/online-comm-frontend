@@ -9,8 +9,22 @@ import Footer from './components/Footer';
 import SingleProduct from './components/SingleProduct';
 import ProductCard from './components/ProductCard';
 import Products from './components/Products';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const[products,setProducts]=useState(null)
+
+  useEffect((()=>{
+    fetch("http://localhost:3000/toptrends")
+    .then(res=>{
+      if(res.ok){
+        res.json().then(setProducts)
+      }
+    })
+
+
+  }),[])
+
   const navigate = useNavigate()
   return (
     <div className="App">
@@ -34,8 +48,8 @@ function App() {
         <Route path='/products' element={
         <>
         <Navbar/>
-        <SearchPage/>
-        <Products/>
+        <SearchPage setProducts={setProducts}/>
+        {products?<Products products={products} setProducts={setProducts}/>:null}
         <Footer/>
         </>
       }></Route>
