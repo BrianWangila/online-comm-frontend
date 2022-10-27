@@ -10,7 +10,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import "../style/signup.css"
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -25,13 +25,6 @@ function Copyright(props) {
 }
 
 const theme = createTheme();
-const sectionStyle = {
-  height: "100vh",
-  backgroundImage:
-    "url('https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000') ",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover"
-};
 
 export default function SignUp() {
   const [username, setUsername] = useState("");
@@ -58,23 +51,20 @@ export default function SignUp() {
     });}
 
   return (
+    <div className="signup"> 
+    <div>
+    <img id="phone"src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form"/>
+    </div> 
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container  component="main" maxWidth="xs" display="flex">
         <CssBaseline />
-          <Grid style={sectionStyle}
-           container
-          direction="column"
-          justify="space-evenly"
-         alignItems="center"
-        ></Grid>
           <Typography component="h1" variant="h3">
              Create an account
           </Typography>
           <Typography component="h5" variant="h5">
           Enter your details below to create an account with us...
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-          
+          <Box id="cont" component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }} >
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
@@ -168,5 +158,9 @@ export default function SignUp() {
         <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
+    <div>
+    <img id="lappy" src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form"/>
+    </div> 
+    </div>
   );
 }

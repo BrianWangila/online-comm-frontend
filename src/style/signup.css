@@ -1,0 +1,33 @@
+.signup{
+  height: 20px;
+  
+}
+#lappy{
+    display: none;
+}
+#phone{
+    display: block;
+    height: 350px;
+    width: 350px ;
+}
+
+
+@media only screen and (min-width: 430px) {
+
+    .signup {
+        display: flex;   
+        
+    }
+    #lappy {
+        display: block;
+        height: 700px;
+        width: 700px ;
+        margin-right: 100px;
+    }
+    #phone {
+        display: none;
+    }
+    #cont {
+        width: 500px;
+    }
+}
