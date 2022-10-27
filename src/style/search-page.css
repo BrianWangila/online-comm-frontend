@@ -1,6 +1,6 @@
 .search-page {
     background-image: url("/public/images/background_phone.png");
-    min-height: 85vh;
+    min-height: 40vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -20,6 +20,9 @@
 }
 
 .search-page-form {
+    position: sticky;
+    top:60px;
+    
     margin: 30px auto 10px ;
     background: white;
     padding: 5px;

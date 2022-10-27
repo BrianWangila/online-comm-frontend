@@ -1,5 +1,62 @@
 .products{
+    
+}
+.product-cards{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+.products-trends{
+    display: flex;
+    padding: 20px 20px 0;
+}
+.products-trends p{
+    font-size: 18px;
+    font-weight: 600;
+}
+.products-trends img{
+    height: 25px;
+}
+.desktop-trends{
+    display: none;
+}
+.trend-buttons{
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+.trend-buttons button{
+    background: #55555577;
+    color: white;
+    border: none;
+    margin: 4px;
+    border-radius: 15px;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+#active-trend{
+    background-color: blue;
+}
+
+@media only screen and (min-width:768px) {
+    .desktop-trends{
+        display: block;
+    }
+    .phone-trends{
+        display: none;
+    }
+    .products{
+        display: flex;
+    }
+    .trend-buttons{
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+    }
+    .trend-buttons button{
+        font-size: 16px;
+        padding: 5px;
+    }
 }
