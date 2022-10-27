@@ -159,7 +159,7 @@ export default function SignUp() {
       </Container>
     </ThemeProvider>
     <div>
-    <img id="lappy" src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form"/>
+    <img id="laptop" src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form"/>
     </div> 
     </div>
   );
