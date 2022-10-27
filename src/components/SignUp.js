@@ -25,22 +25,31 @@ function Copyright(props) {
 }
 
 const theme = createTheme();
+const sectionStyle = {
+  height: "100vh",
+  backgroundImage:
+    "url('https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000') ",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover"
+};
 
 export default function SignUp() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [location, setlocation] = useState("");
   const [password, setPassword] = useState("");
+  const [password_confirmation, setPassword_confirmation] = useState("");
   function handleSubmit(event) {
     const formData = {
       username: username,
       email: email,
       location: location,
       password: password,
+      password_confirmation: password_confirmation
     };
     console.log(formData);
     event.preventDefault();
-    fetch('/signup', {
+    fetch('http://127.0.0.1:3000/signup', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,14 +61,12 @@ export default function SignUp() {
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
+          <Grid style={sectionStyle}
+           container
+          direction="column"
+          justify="space-evenly"
+         alignItems="center"
+        ></Grid>
           <Typography component="h1" variant="h3">
              Create an account
           </Typography>
@@ -67,6 +74,7 @@ export default function SignUp() {
           Enter your details below to create an account with us...
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
@@ -120,6 +128,19 @@ export default function SignUp() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)} placeholder="Password"
                 />
+                 </Grid>
+                 <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="password_confirmation"
+                  label="Password_confirmation"
+                  type="password"
+                  id="password_confirmation"
+                  autoComplete="new-password"
+                  value={password_confirmation}
+                  onChange={(e) => setPassword_confirmation(e.target.value)} placeholder="Password_confirmation"
+                />
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
@@ -144,7 +165,6 @@ export default function SignUp() {
               </Grid>
             </Grid>
           </Box>
-        </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
