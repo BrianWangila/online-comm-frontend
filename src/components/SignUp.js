@@ -58,10 +58,10 @@ export default function SignUp() {
     <ThemeProvider theme={theme}>
       <Container  component="main" maxWidth="xs" display="flex">
         <CssBaseline />
-          <Typography component="h1" variant="h3">
+          <Typography id="h1" component="h1" variant="h3">
              Create an account
           </Typography>
-          <Typography component="h5" variant="h5">
+          <Typography id="h5"component="h5" variant="h5">
           Enter your details below to create an account with us...
           </Typography>
           <Box id="cont" component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }} >
@@ -73,7 +73,7 @@ export default function SignUp() {
                   required
                   fullWidth
                   id="username"
-                  label="USERNAME"
+                  label="Username"
                   autoFocus
                   value={username}
                   onChange={(e) => setUsername(e.target.value)} placeholder="Username"
@@ -124,12 +124,12 @@ export default function SignUp() {
                   required
                   fullWidth
                   name="password_confirmation"
-                  label="Password_confirmation"
+                  label="Confirm Password"
                   type="password"
                   id="password_confirmation"
                   autoComplete="new-password"
                   value={password_confirmation}
-                  onChange={(e) => setPassword_confirmation(e.target.value)} placeholder="Password_confirmation"
+                  onChange={(e) => setPassword_confirmation(e.target.value)} placeholder="Confirm Password"
                 />
               </Grid>
               <Grid item xs={12}>
