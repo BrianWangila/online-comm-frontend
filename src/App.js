@@ -31,7 +31,14 @@ function App() {
         <Route path='/search-results' element={<SearchResults />}></Route>
         <Route path='/footer' element={<Footer />}></Route>
         <Route path='/single-product' element={<SingleProduct />}></Route>
-        <Route path='/products' element={<Products/>}></Route>
+        <Route path='/products' element={
+        <>
+        <Navbar/>
+        <SearchPage/>
+        <Products/>
+        <Footer/>
+        </>
+      }></Route>
         <Route exact path="/" element={
         <div style={{display:"flex",flexDirection:"column"}}>
           <button onClick={() => navigate("/mycomponent")}>Mycomponent</button>
