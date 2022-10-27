@@ -1,85 +1,89 @@
-import { useEffect } from "react";
-import { useForm, FormProvider, SubmitHandler } from "react-hook-form";
-// import { authApi } from "../api/authApi";
+import React from "react";
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
-const forgotPasswordchema = object({
-  email: string().min(1, "Email is required").email("Invalid email address"),
-});
 
-export type ForgotPasswordInput = TypeOf<typeof forgotPasswordchema>;
-
-const ForgotPasswordPage = () => {
-  const store = useStore();
-
-  const methods = useForm<ForgotPasswordInput>({
-    // how to resolve the query
-  });
-
-  const {
-    reset,
-    handleSubmit,
-    formState: { isSubmitSuccessful },
-  } = methods;
-
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      reset();
-    }
-    
-  }, [isSubmitSuccessful]);
-
-  const forgotPassword = async (data: ForgotPasswordInput) => {
-    try {
-      store.setRequestLoading(true);
-      const response = await authApi.post<GenericResponse>(
-        `auth/forgotpassword`,
-        data
-      );
-      store.setRequestLoading(false);
-      toast.success(response.data.message as string, {
-        position: "top-right",
-      });
-    } catch (error: any) {
-      store.setRequestLoading(false);
-      const resMessage =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-      toast.error(resMessage, {
-        position: "top-right",
-      });
-    }
-  };
-
-  const onSubmitHandler: SubmitHandler<ForgotPasswordInput> = (values) => {
-    forgotPassword(values);
-  };
+function Copyright(props) {
   return (
-    <section className="bg-ct-blue-600 min-h-screen grid place-items-center">
-      <div className="w-full">
-        <h1 className="text-4xl xl:text-6xl text-center font-[600] text-ct-yellow-600 mb-7">
-          Forgot Password
-        </h1>
-        <FormProvider {...methods}>
-          <form
-            onSubmit={handleSubmit(onSubmitHandler)}
-            className="max-w-md w-full mx-auto overflow-hidden shadow-lg bg-ct-dark-200 rounded-2xl p-8 space-y-5"
-          >
-            <FormInput label="Email Address" name="email" type="email" />
-            <LoadingButton
-              loading={store.requestLoading}
-              textColor="text-ct-blue-600"
-            >
-              Send Reset Code
-            </LoadingButton>
-          </form>
-        </FormProvider>
-      </div>
-    </section>
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        MURIFE
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
   );
-};
+}
 
-export default ForgotPasswordPage;
+const theme = createTheme();
+
+export default function ForgotPassword() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    });
+  };
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          
+          <Typography component="h2" variant="h">
+              Forgot Password?
+          </Typography>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Current Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="New Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Change Password
+            </Button>
+          </Box>
+        </Box>
+        <Copyright sx={{ mt: 8, mb: 4 }} />
+      </Container>
+    </ThemeProvider>
+  );
+}

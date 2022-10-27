@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import SearchPage from './components/SearchPage';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
+import ForgotPassword from './components/ForgotPassword'
 import SearchResults from './components/SearchResults';
 import Footer from './components/Footer';
 import SingleProduct from './components/SingleProduct';
@@ -15,7 +16,8 @@ function App() {
     <div className="App">
       <Routes>
         {/* add your routes here */}
-        <Route path="/signup" element={ <SignUp/> }>
+        <Route path="/signup" element={ <SignUp/> }> </Route>
+        <Route path="/resetpassword" element={ <ForgotPassword/> }>
           
           {/* mycomponent goes here */}
         </Route>
@@ -37,6 +39,7 @@ function App() {
           <button onClick={() => navigate("/signup")}>SignUp</button>
           <button onClick={() => navigate("/search")}>Search</button>
           <button onClick={() => navigate("/login")}>Login</button>
+          <button onClick={() => navigate("/resetpassword")}>Forgot Password</button>
           <button onClick={() => navigate("/search-results")}>Search Results</button>
           <button onClick={() => navigate("/footer")}>Footer</button>
           <button onClick={() => navigate("/single-product")}>Single Product</button>
