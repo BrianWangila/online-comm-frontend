@@ -4,6 +4,9 @@ import Navbar from './components/Navbar';
 import SearchPage from './components/SearchPage';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
+import SearchResults from './components/SearchResults';
+import Footer from './components/Footer';
+import SingleProduct from './components/SingleProduct';
 
 function App() {
   const navigate = useNavigate()
@@ -23,6 +26,9 @@ function App() {
         <Navbar/>
         <SearchPage/>
         </>}/>
+        <Route path='/search-results' element={<SearchResults />}></Route>
+        <Route path='/footer' element={<Footer />}></Route>
+        <Route path='/single-product' element={<SingleProduct />}></Route>
         <Route exact path="/" element={
         <div style={{display:"flex",flexDirection:"column"}}>
           <button onClick={() => navigate("/mycomponent")}>Mycomponent</button>
@@ -30,7 +36,10 @@ function App() {
           <button onClick={() => navigate("/signup")}>SignUp</button>
           <button onClick={() => navigate("/search")}>Search</button>
           <button onClick={() => navigate("/login)")}>Login</button>
-          </div>
+          <button onClick={() => navigate("/search-results")}>Search Results</button>
+          <button onClick={() => navigate("/footer")}>Footer</button>
+
+        </div>
           }
           />
       </Routes>
