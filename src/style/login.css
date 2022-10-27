@@ -1,0 +1,33 @@
+.login {
+  height: 100vh;
+  align-items: center;
+}
+
+#laptop {
+  display: none;
+}
+#phone {
+  display: block;
+  height: 350px;
+  width: 350px;
+}
+
+@media only screen and (min-width: 430px) {
+
+  .login {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+}
+
+  #laptop {
+    display: block;
+    height: 700px;
+    width: 900px;
+    
+
+  }
+  #phone {
+    display: none;
+  }
+}
