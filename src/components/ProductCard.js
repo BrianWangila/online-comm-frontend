@@ -1,24 +1,27 @@
 import '../style/product-card.css'
 
-export default function ProductCard() {
-    const stars=[true,true,true,false,false]
+export default function ProductCard({product}) {
+    const stars=[false,false,false,false,false]
+    for(let i=0;i<product.rating;i++){
+        stars[i]=true
+    }
     return (
         <div className='product-card'>
             <div className='product-card-image'>
-                <img className='product-image' src='/images/test.jpg' />
+                <img className='product-image' src={product.image_url} />
                 <div className='product-shop-image'>
-                    <img src='/icons/jumia.png' />
+                    <img src={`/icons/${product.shop}.png`} />
                 </div>
                 <div className='product-discount'>
-                    <p>{"16% off"}</p>
+                    <p>{product.discount}</p>
                 </div>
 
             </div>
             <div className='product-card-details'>
-                <p className='pro-p p-name'>{"airpods pro"}</p>
+                <p className='pro-p p-name'>{product.name}</p>
                 <div className='product-prices'>
-                    <p className='pro-p p-price'>{"Ksh 45,000"}</p>
-                    <p className='pro-p p-price-cancelled'>{"Ksh 55000"}</p>
+                    <p className='pro-p p-price'>{product.price}</p>
+                    <p className='pro-p p-price-cancelled'>{product.price_before_discount}</p>
                 </div>
                 <div className='product-stars'>
                     {stars.map(star=><img className={`star ${star?"star-on":"star-off"}`} src='/icons/star.svg'/>)}
