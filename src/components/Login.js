@@ -34,14 +34,25 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function Login() {
+export default function Login({onLogin}) {
+  const [loginDetails,setLoginDetails] = useState({userdetails:"",password:""})
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+
+    fetch("http://localhost:3000/login",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify({user: loginDetails})
+    }).then(res=>{
+      if(res.ok){
+        res.json().then(onLogin)
+      }
+      else{
+        res.json().then(console.log)
+      }
+    })
   };
 
   return (
@@ -68,7 +79,7 @@ export default function Login() {
               Welcome back
             </Typography>
             <Typography component="h">
-              Enter your details below to logim
+              Enter your details below to login
             </Typography>
             <Box
               component="form"
@@ -81,6 +92,8 @@ export default function Login() {
                 required
                 fullWidth
                 id="email"
+                onChange={e=>setLoginDetails(details=>({...details,userdetails:e.target.value}))}
+                value={loginDetails.userdetails}
                 label="Username or email Address"
                 name="email"
                 autoComplete="email"
@@ -92,6 +105,8 @@ export default function Login() {
                 fullWidth
                 name="password"
                 label="Password"
+                value={loginDetails.password}
+                onChange={e=>setLoginDetails(details=>({...details,password:e.target.value}))}
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -123,8 +138,9 @@ export default function Login() {
                   </Link>
                 </Grid>
                 <Grid item>
+                Don't have an account?
                   <Link href="/signup" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                    {" Signup"}
                   </Link>
                 </Grid>
               </Grid>
