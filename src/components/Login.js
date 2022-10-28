@@ -68,7 +68,7 @@ export default function Login() {
               Welcome back
             </Typography>
             <Typography component="h">
-              Enter your details below to logim
+              Enter your details below to login
             </Typography>
             <Box
               component="form"
@@ -118,7 +118,7 @@ export default function Login() {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <Link href="/resetpassword" variant="body2">
                     Forgot password?
                   </Link>
                 </Grid>

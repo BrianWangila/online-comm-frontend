@@ -6,6 +6,7 @@ import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import Grid from "@mui/material/Grid";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
@@ -31,59 +32,80 @@ export default function ForgotPassword() {
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get('email'),
-      password: data.get('password'),
+
     });
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          
-          <Typography component="h2" variant="h">
+    <div className="login">
+      <div>
+        <img
+          id="phone"
+          src="https://img.freepik.com/premium-vector/forgot-password_442409-1785.jpg?w=2000"
+          alt="login image"
+        />
+      </div>
+      <ThemeProvider theme={theme}>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <Box
+            sx={{
+              marginTop: 8,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Typography component="h1" variant="h">
               Forgot Password?
-          </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Current Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="New Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+            </Typography>
+            <Typography component="h">
+              Enter the email address associated with this account to reset your password...
+            </Typography>
+            <Box
+              component="form"
+              onSubmit={handleSubmit}
+              noValidate
+              sx={{ mt: 1 }}
             >
-              Change Password
-            </Button>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Enter your email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 1, mb: 2 }}
+              >
+                Submit
+              </Button>
+              <Grid container>
+                <Grid item xs>
+                  <Link href="login" variant="body2">
+                    Navigate to Login
+                  </Link>
+                </Grid>
+              </Grid>
+            </Box>
           </Box>
-        </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
-      </Container>
-    </ThemeProvider>
+          <Copyright sx={{ mt: 8, mb: 4 }} />
+        </Container>
+      </ThemeProvider>
+      <div>
+        <img
+          id="laptop"
+          src="https://img.freepik.com/premium-vector/forgot-password_442409-1785.jpg?w=2000"
+          alt="form"
+        />
+      </div>
+    </div>
   );
 }
+
