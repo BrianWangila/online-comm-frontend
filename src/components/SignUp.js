@@ -27,6 +27,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
+  const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [location, setlocation] = useState("");
@@ -34,6 +35,7 @@ export default function SignUp() {
   const [password_confirmation, setPassword_confirmation] = useState("");
   function handleSubmit(event) {
     const formData = {
+      name: name,
       username: username,
       email: email,
       location: location,
@@ -66,6 +68,19 @@ export default function SignUp() {
           </Typography>
           <Box id="cont" component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }} >
             <Grid container spacing={2}>
+            <Grid item xs={12}>
+                <TextField
+                  autoComplete="given-name"
+                  name="name"
+                  required
+                  fullWidth
+                  id="name"
+                  label="Name"
+                  autoFocus
+                  value={name}
+                  onChange={(e) => setName(e.target.value)} placeholder="Name"
+                />
+              </Grid>
               <Grid item xs={12}>
                 <TextField
                   autoComplete="given-name"
