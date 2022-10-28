@@ -26,7 +26,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignUp() {
+export default function SignUp({onLogin}) {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -50,7 +50,12 @@ export default function SignUp() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
-    });}
+    }).then(res=>{
+      if(res.ok){
+        res.json().then(onLogin)
+      }
+    })
+  }
 
   return (
     <div className="signup"> 
@@ -164,8 +169,9 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
+              Already have an account?
                 <Link href="/login" variant="body2">
-                  Already have an account? login
+                   {" Login"}
                 </Link>
               </Grid>
             </Grid>
