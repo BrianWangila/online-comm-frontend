@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const[products,setProducts]=useState(null)
+  const[user,setUser]=useState(null)
 
   useEffect((()=>{
     fetch("http://localhost:3000/toptrends")
@@ -21,9 +22,19 @@ function App() {
         res.json().then(setProducts)
       }
     })
-
-
   }),[])
+  useEffect((()=>{
+    fetch("http://localhost:3000/me")
+    .then(res=>{
+      if(res.ok){
+        res.json().then(setUser)
+      }
+    })
+  }),[])
+  function onLogin(newUser){
+    //useNavigate("/products")
+    setUser(newUser)
+  }
 
   const navigate = useNavigate()
   return (
