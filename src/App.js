@@ -9,8 +9,24 @@ import ForgotPassword from './components/ForgotPassword'
 import SearchResults from './components/SearchResults';
 import Footer from './components/Footer';
 import SingleProduct from './components/SingleProduct';
+import ProductCard from './components/ProductCard';
+import Products from './components/Products';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const[products,setProducts]=useState(null)
+
+  useEffect((()=>{
+    fetch("http://localhost:3000/toptrends")
+    .then(res=>{
+      if(res.ok){
+        res.json().then(setProducts)
+      }
+    })
+
+
+  }),[])
+
   const navigate = useNavigate()
   return (
     <div className="App">
@@ -32,6 +48,14 @@ function App() {
         <Route path='/search-results' element={<SearchResults />}></Route>
         <Route path='/footer' element={<Footer />}></Route>
         <Route path='/single-product' element={<SingleProduct />}></Route>
+        <Route path='/products' element={
+        <>
+        <Navbar/>
+        <SearchPage setProducts={setProducts}/>
+        {products?<Products products={products} setProducts={setProducts}/>:null}
+        <Footer/>
+        </>
+      }></Route>
         <Route exact path="/" element={
         <div style={{display:"flex",flexDirection:"column"}}>
           <button onClick={() => navigate("/mycomponent")}>Mycomponent</button>
@@ -43,6 +67,7 @@ function App() {
           <button onClick={() => navigate("/search-results")}>Search Results</button>
           <button onClick={() => navigate("/footer")}>Footer</button>
           <button onClick={() => navigate("/single-product")}>Single Product</button>
+          <button onClick={() => navigate("/products")}>Products</button>
         </div>
           }
           />

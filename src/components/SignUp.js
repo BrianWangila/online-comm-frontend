@@ -27,6 +27,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
+  const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [location, setlocation] = useState("");
@@ -34,6 +35,7 @@ export default function SignUp() {
   const [password_confirmation, setPassword_confirmation] = useState("");
   function handleSubmit(event) {
     const formData = {
+      name: name,
       username: username,
       email: email,
       location: location,
@@ -58,14 +60,27 @@ export default function SignUp() {
     <ThemeProvider theme={theme}>
       <Container  component="main" maxWidth="xs" display="flex">
         <CssBaseline />
-          <Typography component="h1" variant="h3">
+          <Typography id="h1" component="h1" variant="h3">
              Create an account
           </Typography>
-          <Typography component="h5" variant="h5">
+          <Typography id="h5"component="h5" variant="h5">
           Enter your details below to create an account with us...
           </Typography>
           <Box id="cont" component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }} >
             <Grid container spacing={2}>
+            <Grid item xs={12}>
+                <TextField
+                  autoComplete="given-name"
+                  name="name"
+                  required
+                  fullWidth
+                  id="name"
+                  label="Name"
+                  autoFocus
+                  value={name}
+                  onChange={(e) => setName(e.target.value)} placeholder="Name"
+                />
+              </Grid>
               <Grid item xs={12}>
                 <TextField
                   autoComplete="given-name"
@@ -73,7 +88,7 @@ export default function SignUp() {
                   required
                   fullWidth
                   id="username"
-                  label="USERNAME"
+                  label="Username"
                   autoFocus
                   value={username}
                   onChange={(e) => setUsername(e.target.value)} placeholder="Username"
@@ -124,12 +139,12 @@ export default function SignUp() {
                   required
                   fullWidth
                   name="password_confirmation"
-                  label="Password_confirmation"
+                  label="Confirm Password"
                   type="password"
                   id="password_confirmation"
                   autoComplete="new-password"
                   value={password_confirmation}
-                  onChange={(e) => setPassword_confirmation(e.target.value)} placeholder="Password_confirmation"
+                  onChange={(e) => setPassword_confirmation(e.target.value)} placeholder="Confirm Password"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -159,7 +174,7 @@ export default function SignUp() {
       </Container>
     </ThemeProvider>
     <div>
-    <img id="lappy" src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form"/>
+    <img id="laptop" src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form"/>
     </div> 
     </div>
   );
