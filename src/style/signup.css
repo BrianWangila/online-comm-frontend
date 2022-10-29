@@ -1,21 +1,25 @@
-.signup{
+.signup {
   height: 100vh; 
   align-items: center;   
 }
-#h1{
+#h1 {
     font-size: 30px;
 }
-#h5{
+#h5 {
     font-size: 15px;
 }
-#lappy{
+
+#lappy {
     display: none;
 }
-#phone{
+
+#phone {
     display: block;
     height: 350px;
     width: 350px ;
 }
+
+
 
 
 @media only screen and (min-width: 430px) {
@@ -39,5 +43,9 @@
     }
     #h5{
         font-size: 25px;
+    }
+
+    .horizontal {
+        width: 30vw;
     }
 }

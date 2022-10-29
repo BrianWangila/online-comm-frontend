@@ -15,7 +15,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="#">
+      <Link color="inherit" href="#" style={{textDecoration: "none"}}>
         MURIFE
       </Link>{' '}
       {new Date().getFullYear()}
@@ -65,7 +65,7 @@ export default function SignUp({onLogin}) {
     <div>
     <img id="phone"src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form"/>
     </div> 
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} className="signup-form">
       <Container  component="main" maxWidth="xs" display="flex">
         <CssBaseline />
           <Typography id="h1" component="h1" variant="h3">
@@ -173,11 +173,18 @@ export default function SignUp({onLogin}) {
             >
               Create account
             </Button>
-            <Grid container justifyContent="flex-end">
+            <hr className="horizontal"/>
+            <Grid container justifyContent="flex-end" style={{fontSize: "small", textDecoration: "none"}}>
               <Grid item>
               Already have an account?
-                <Link href="/login" variant="body2">
+                <Link href="/login" variant="body2" style={{textDecoration: "none", color: "orangered"}}>
                    {" Login"}
+                </Link>
+              </Grid>
+              <Grid item>
+              Not interested, go back to 
+                <Link href="/" variant="body2" style={{textDecoration: "none", color: "orangered"}}>
+                   {" Home"}
                 </Link>
               </Grid>
             </Grid>
