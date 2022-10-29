@@ -1,15 +1,29 @@
-.login {
-  height: 100vh;
-  align-items: center;
-}
 
 #laptop {
   display: none;
 }
-#phone {
+#phone-img {
   display: block;
-  height: 350px;
-  width: 350px;
+  margin-top: 3vh;
+  height: 30vh;
+  margin-left: 19vw;
+  
+}
+
+.login-form {
+  margin-bottom: -7vh;
+}
+
+
+.login-form Button {
+  width: 60vw;
+  height: 6vh;
+  color: whitesmoke;
+  background-color: black;
+}
+
+.login-box {
+  margin-bottom: -5vh;
 }
 
 @media only screen and (min-width: 430px) {
@@ -20,14 +34,32 @@
     align-items: center;
 }
 
+.login-box {
+  margin-bottom: -5vh;
+}
+
+.login-form {
+  border-radius: 10px;
+  border: 1px solid rgb(180, 175, 175);
+}
+
+.login-form Button {
+  width: 20vw;
+  height: 7vh;
+}
+
   #laptop {
     display: block;
-    height: 700px;
-    width: 900px;
-    
-
+    height: 100vh;
+    margin-right: 5vw;
   }
-  #phone {
+
+  .welcome-message {
+    font-size: 23px;
+  }
+
+
+  #phone-img {
     display: none;
   }
 }
