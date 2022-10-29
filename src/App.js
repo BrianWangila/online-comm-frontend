@@ -12,19 +12,21 @@ import SingleProduct from './components/SingleProduct';
 import ProductCard from './components/ProductCard';
 import Products from './components/Products';
 import { useEffect, useState } from 'react';
+import { CircularProgress} from '@material-ui/core';
 
 function App() {
   const [products, setProducts] = useState(null)
   const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(false)
 
-  const navigate=useNavigate()
+  const navigate = useNavigate()
 
   //const token=localStorage.getItem("jwt")
 
-  const[token,setToken]=useState("")
-  useEffect((()=>{
+  const [token, setToken] = useState("")
+  useEffect((() => {
     setToken(localStorage.getItem("jwt"))
-  }),[])
+  }), [])
 
   useEffect((() => {
     fetch("http://localhost:3000/toptrends")
@@ -35,18 +37,18 @@ function App() {
       })
   }), [])
   useEffect((() => {
-   let t=localStorage.getItem("jwt")
-   console.log(t)
-    fetch("http://localhost:3000/me",{
-      method:"GET",
-      headers:{
-        "Authorization":"Bearer "+t
-      }   
+    let t = localStorage.getItem("jwt")
+    console.log(t)
+    fetch("http://localhost:3000/me", {
+      method: "GET",
+      headers: {
+        "Authorization": "Bearer " + t
+      }
     })
       .then(res => {
         if (res.ok) {
           res.json().then(setUser)
-        }else{
+        } else {
           res.json().then(console.log)
         }
       })
@@ -54,7 +56,7 @@ function App() {
 
   function onLogin(newUser) {
     navigate("/")
-    localStorage.setItem("jwt",JSON.stringify(newUser.jwt))
+    localStorage.setItem("jwt", JSON.stringify(newUser.jwt))
     console.log(newUser)
     setUser(newUser)
   }
@@ -63,15 +65,20 @@ function App() {
       <Routes>
         <Route exact path='/' element={
           <>
-            <Navbar user={user}/>
-            <SearchPage setProducts={setProducts} />
+            {loading ? <div className='overlay'>
+                 <CircularProgress className='circular-progress'/>
+              </div> : null}
+            <div>
+            </div>
+            <Navbar user={user} />
+            <SearchPage setProducts={setProducts} setLoading={setLoading} />
             {products ? <Products products={products} setProducts={setProducts} /> : null}
             <Footer />
           </>
         }></Route>
-        <Route path="/login" element={<Login onLogin={onLogin}/>}/>
-        <Route path='/signup' element={<SignUp onLogin={onLogin}/>}/>
-        <Route path='/resetpassword' element={<ForgotPassword/>}/>
+        <Route path="/login" element={<Login onLogin={onLogin} />} />
+        <Route path='/signup' element={<SignUp onLogin={onLogin} />} />
+        <Route path='/resetpassword' element={<ForgotPassword />} />
       </Routes>
     </div>
   );

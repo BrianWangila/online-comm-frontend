@@ -5,3 +5,20 @@
   font-family: "Noto Sans",sans-serif;
   position: relative;
 }
+.overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  /* justify-content: center; */
+  z-index: 200;
+  background-color: #00000063;
+}
+.circular-progress{
+  margin-top: 50vh;
+}

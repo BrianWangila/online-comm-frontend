@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import '../style/search-page.css'
 
-export default function SearchPage({setProducts}) {
+export default function SearchPage({setProducts,setLoading}) {
     const [search, setSearch] = useState("")
     function handleSearch(e) {
         e.preventDefault()
         console.log("here",search);
+        setLoading(true)
         fetch("http://localhost:3000/search", {
             method: "POST",
             headers: {
@@ -16,9 +17,11 @@ export default function SearchPage({setProducts}) {
             })
         })
             .then(res => {
-                console.log("I am here");
                 if (res.ok) {
-                    res.json().then(setProducts)
+                    res.json().then(products=>{
+                        setProducts(products)
+                        setLoading(false)
+                    })
                 } else {
                     console.log(res)
                 }
