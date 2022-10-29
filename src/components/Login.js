@@ -67,7 +67,7 @@ export default function Login({onLogin}) {
      gapi.load('client:auth2', initClient);
  });
  const onSuccess = (res) => {
-  console.log('success:', res);
+  console.log('success:', res.getBasicProfile());
 };
 const onFailure = (err) => {
   console.log('failed:', err);
