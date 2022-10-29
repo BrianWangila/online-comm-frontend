@@ -1,0 +1,23 @@
+.text-li {
+  color: black;
+  list-style: none;
+  text-align: left;
+}
+
+.text-li li {
+  margin-bottom: 0.5vh;
+}
+
+.avatar-card {
+  position: fixed;
+  right: 1.5vw;
+  margin-top: 2vh;
+}
+
+.text-li button {
+  border: 1px solid rgb(155, 149, 149);
+  border-radius: 5px;
+  margin-top: 0.5vh;
+  font-size: small;
+}
+
