@@ -41,14 +41,7 @@ function App() {
   useEffect((() => {
 
    let t=localStorage.getItem("jwt")
-   
-    fetch("http://localhost:3000/me",{
-      method:"GET",
-      headers:{
-        "Authorization":"Bearer "+t
-      }   
-    let t = localStorage.getItem("jwt")
-    console.log(t)
+
     fetch("http://localhost:3000/me", {
       method: "GET",
       headers: {
