@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -13,6 +13,8 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "../style/login.css";
+import { GoogleLogin } from 'react-google-login';
+import { gapi } from 'gapi-script';
 
 function Copyright(props) {
   return (
@@ -54,6 +56,22 @@ export default function Login({onLogin}) {
       }
     })
   };
+  const clientId = '402509286566-rc7onvlh0f5n89779pb34hhhkerqv9j6.apps.googleusercontent.com';
+  useEffect(() => {
+    const initClient = () => {
+          gapi.client.init({
+          clientId: clientId,
+          scope: ''
+        });
+     };
+     gapi.load('client:auth2', initClient);
+ });
+ const onSuccess = (res) => {
+  console.log('success:', res);
+};
+const onFailure = (err) => {
+  console.log('failed:', err);
+};
 
   return (
     <div className="login">
@@ -123,14 +141,14 @@ export default function Login({onLogin}) {
               >
                 Login
               </Button>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 1, mb: 2 }}
-              >
-                Login with Google
-              </Button>
+              <GoogleLogin
+             clientId={clientId}
+             buttonText="Sign in with Google"
+             onSuccess={onSuccess}
+             onFailure={onFailure}
+             cookiePolicy={'single_host_origin'}
+             isSignedIn={true}
+             />
               <Grid container>
                 <Grid item xs>
                   <Link href="/resetpassword" variant="body2">
