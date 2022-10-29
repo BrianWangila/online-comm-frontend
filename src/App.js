@@ -73,6 +73,7 @@ function App() {
         <Route path='/signup' element={<SignUp onLogin={onLogin}/>}/>
         <Route path='/profile' element={<Profile user={user} />}/>
 
+        <Route path='/resetpassword' element={<ForgotPassword/>}/>
       </Routes>
     </div>
   );
