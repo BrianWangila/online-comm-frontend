@@ -15,7 +15,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="#">
         MURIFE
       </Link>{' '}
       {new Date().getFullYear()}
@@ -33,6 +33,8 @@ export default function SignUp({onLogin}) {
   const [location, setlocation] = useState("");
   const [password, setPassword] = useState("");
   const [password_confirmation, setPassword_confirmation] = useState("");
+  const [error, setError] = useState([])
+
   function handleSubmit(event) {
     const formData = {
       name: name,
@@ -53,7 +55,8 @@ export default function SignUp({onLogin}) {
     }).then(res=>{
       if(res.ok){
         res.json().then(onLogin)
-      }
+      } else
+        res.json().then((err) => setError(err.error))
     })
   }
 
@@ -72,6 +75,9 @@ export default function SignUp({onLogin}) {
           Enter your details below to create an account with us...
           </Typography>
           <Box id="cont" component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }} >
+
+            <p style={{color: "red", fontSize: "small"}}>{error}</p>
+
             <Grid container spacing={2}>
             <Grid item xs={12}>
                 <TextField

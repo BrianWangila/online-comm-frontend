@@ -12,6 +12,8 @@ import SingleProduct from './components/SingleProduct';
 import ProductCard from './components/ProductCard';
 import Products from './components/Products';
 import { useEffect, useState } from 'react';
+
+import Profile from './components/Profile';
 import { CircularProgress} from '@material-ui/core';
 
 function App() {
@@ -37,6 +39,14 @@ function App() {
       })
   }), [])
   useEffect((() => {
+
+   let t=localStorage.getItem("jwt")
+   
+    fetch("http://localhost:3000/me",{
+      method:"GET",
+      headers:{
+        "Authorization":"Bearer "+t
+      }   
     let t = localStorage.getItem("jwt")
     console.log(t)
     fetch("http://localhost:3000/me", {
@@ -56,6 +66,7 @@ function App() {
 
   function onLogin(newUser) {
     navigate("/")
+
     localStorage.setItem("jwt", JSON.stringify(newUser.jwt))
     console.log(newUser)
     setUser(newUser)
@@ -76,6 +87,10 @@ function App() {
             <Footer />
           </>
         }></Route>
+        <Route path="/login" element={<Login onLogin={onLogin}/>}/>
+        <Route path='/signup' element={<SignUp onLogin={onLogin}/>}/>
+        <Route path='/profile' element={<Profile user={user} />}/>
+
         <Route path="/login" element={<Login onLogin={onLogin} />} />
         <Route path='/signup' element={<SignUp onLogin={onLogin} />} />
         <Route path='/resetpassword' element={<ForgotPassword />} />

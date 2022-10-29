@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import '../style/navbar.css'
+import UserAvatar from './UserAvatar'
 
 export default function Navbar({user}){
     const navigate=useNavigate()
@@ -11,12 +12,12 @@ export default function Navbar({user}){
             <div className="navbar-logo">Murife</div>
             {user?
             <div>
-                <img/>
-                <p>{user.username}</p>
+                <UserAvatar user={user}/>
             </div>
             :<div>
                 <button onClick={handleLoginOnclick} className="navbar-login">Login</button>
             </div>}
+            
         </div>
     )
 }
