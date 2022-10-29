@@ -43,21 +43,7 @@ export default function Login({onLogin}) {
   console.log(message)
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    fetch("http://localhost:3000/login",{
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json"
-      },
-      body: JSON.stringify({user: loginDetails})
-    }).then(res=>{
-      if(res.ok){
-        res.json().then(onLogin)
-      }
-      else{
-        res.json().then((err) => setMessage(err.message))
-      }
-    })
+    signin(loginDetails)
   };
   const clientId = '402509286566-rc7onvlh0f5n89779pb34hhhkerqv9j6.apps.googleusercontent.com';
   useEffect(() => {
@@ -71,10 +57,29 @@ export default function Login({onLogin}) {
  });
  const onSuccess = (res) => {
   console.log('success:', res.getBasicProfile());
+  const google = res.getBasicProfile()
+  const signindata = {email: google.cu, password: google.NT }
+  signin(signindata)
 };
 const onFailure = (err) => {
   console.log('failed:', err);
 };
+function signin(signindata) {
+  fetch("http://localhost:3000/login",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify({user: signindata})
+    }).then(res=>{
+      if(res.ok){
+        res.json().then(onLogin)
+      }
+      else{
+        res.json().then((err) => setMessage(err.message))
+      }
+    })
+}
 
   return (
     <div className="login">
