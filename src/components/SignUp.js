@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -11,6 +11,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import "../style/signup.css"
+import { GoogleLogin } from 'react-google-login';
+import { gapi } from 'gapi-script';
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -46,20 +48,42 @@ export default function SignUp({onLogin}) {
     };
     console.log(formData);
     event.preventDefault();
-    fetch('http://127.0.0.1:3000/signup', {
+    signup(formData)
+  }
+
+  const clientId = '402509286566-rc7onvlh0f5n89779pb34hhhkerqv9j6.apps.googleusercontent.com';
+  useEffect(() => {
+    const initClient = () => {
+          gapi.client.init({
+          clientId: clientId,
+          scope: ''
+        });
+     };
+     gapi.load('client:auth2', initClient);
+ });
+ const onSuccess = (res) => {
+  console.log('success:', res.getBasicProfile());
+  const google = res.getBasicProfile()
+  const signupdata = {name: google.Ad, email: google.cu, password: google.NT, password_confirmation: google.NT }
+ signup(signupdata) 
+};
+const onFailure = (err) => {
+  console.log('failed:', err);
+};
+ function signup(signupdata) {
+  fetch('http://127.0.0.1:3000/signup', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(signupdata),
     }).then(res=>{
       if(res.ok){
         res.json().then(onLogin)
       } else
         res.json().then((err) => setError(err.error))
     })
-  }
-
+ }
   return (
     <div className="signup"> 
     <div>
@@ -165,6 +189,14 @@ export default function SignUp({onLogin}) {
                 />
               </Grid>
             </Grid>
+            <GoogleLogin
+             clientId={clientId}
+             buttonText="Sign in with Google"
+             onSuccess={onSuccess}
+             onFailure={onFailure}
+             cookiePolicy={'single_host_origin'}
+             isSignedIn={true}
+             />
             <Button
               type="submit"
               fullWidth
