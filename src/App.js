@@ -12,6 +12,7 @@ import SingleProduct from './components/SingleProduct';
 import ProductCard from './components/ProductCard';
 import Products from './components/Products';
 import { useEffect, useState } from 'react';
+import Profile from './components/Profile';
 
 function App() {
   const [products, setProducts] = useState(null)
@@ -36,7 +37,7 @@ function App() {
   }), [])
   useEffect((() => {
    let t=localStorage.getItem("jwt")
-   console.log(t)
+   
     fetch("http://localhost:3000/me",{
       method:"GET",
       headers:{
@@ -55,7 +56,6 @@ function App() {
   function onLogin(newUser) {
     navigate("/")
     localStorage.setItem("jwt",JSON.stringify(newUser.jwt))
-    console.log(newUser)
     setUser(newUser)
   }
   return (
@@ -71,6 +71,8 @@ function App() {
         }></Route>
         <Route path="/login" element={<Login onLogin={onLogin}/>}/>
         <Route path='/signup' element={<SignUp onLogin={onLogin}/>}/>
+        <Route path='/profile' element={<Profile user={user} />}/>
+
       </Routes>
     </div>
   );
