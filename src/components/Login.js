@@ -23,7 +23,7 @@ function Copyright(props) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="#">
         MURIFE
       </Link>{" "}
       {new Date().getFullYear()}
@@ -36,6 +36,9 @@ const theme = createTheme();
 
 export default function Login({onLogin}) {
   const [loginDetails,setLoginDetails] = useState({userdetails:"",password:""})
+  const [message, setMessage] = useState([])
+
+  console.log(message)
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -50,7 +53,7 @@ export default function Login({onLogin}) {
         res.json().then(onLogin)
       }
       else{
-        res.json().then(console.log)
+        res.json().then((err) => setMessage(err.message))
       }
     })
   };
@@ -81,12 +84,15 @@ export default function Login({onLogin}) {
             <Typography component="h">
               Enter your details below to login
             </Typography>
+            
             <Box
               component="form"
               onSubmit={handleSubmit}
               noValidate
               sx={{ mt: 1 }}
             >
+              <p style={{color: "red", fontSize: "small"}}>{message}</p>
+
               <TextField
                 margin="normal"
                 required
@@ -111,6 +117,7 @@ export default function Login({onLogin}) {
                 id="password"
                 autoComplete="current-password"
               />
+
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
