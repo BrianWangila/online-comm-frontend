@@ -1,51 +1,84 @@
 .signup {
-  height: 100vh; 
-  align-items: center;   
-}
-#h1 {
-    font-size: 30px;
-}
-#h5 {
-    font-size: 15px;
+  /* height: 100vh; */
+  /* border: 3px solid blue; */
+
 }
 
-#lappy {
+#h1 {
+    font-size: 25px;
+}
+
+#h5 {
+    font-size: 13px;
+}
+
+#laptop {
     display: none;
 }
 
-#phone {
-    display: block;
-    height: 350px;
-    width: 350px ;
+.promos-text {
+    font-size: 25px;
 }
 
+#phone {
+    display: content;
+    border: 1px solid red;
+    height: ;
+    width: 60vw ;
+    align-items: center;
+}
 
+.signup-form {
+    /* border: 1px solid red; */
 
+}
 
 @media only screen and (min-width: 430px) {
 
     .signup {
-        display: flex;   
-        height: 100vh;
+        display: flex;
         align-items: center;
     }
-    #lappy {
-        display: block;
-        height: 700px;
-        width: 700px ;
-        margin-right: 100px;
+
+    .signup-form {
+        /* border: 1px solid rgb(21, 255, 0); */
+        width: 40vw;
+        /* height: 100vh; */
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
     }
+
+    .account-text {
+        padding-left: 1vw;
+    }
+
+    .buttons-flex {
+        display: flex;
+        flex-direction: column;
+        width: 28vw;
+        align-items: end;
+    }
+
+    #laptop img {
+        display: flex;
+        /* border: 2px solid red; */
+        height:  80vh;
+        align-items: center;
+        margin-top: 10vh;
+        /* margin-right: 100px; */
+    }
+
     #phone {
         display: none;
     }
+    
     #h1{
-        font-size: 45px;
+        font-size: 30px;
     }
     #h5{
-        font-size: 25px;
+        font-size: 15px;
     }
 
-    .horizontal {
-        width: 30vw;
-    }
+
 }

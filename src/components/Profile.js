@@ -1,21 +1,19 @@
 import React from 'react'
 import '../style/Profile.css'
-import { Button } from '@material-ui/core'
 
 
-function Profile({user}) {
+function Profile({ user, handleClose }) {
+
+
   return (
     <>
-      <div className='profile-card'>
+      <div className='profile-card' onMouseOut={handleClose}>
         <ul>
-          <li>Name: {user.user.name}</li>
-          <li>Username: {user.user.username}</li>
+          TEST
+          {/* <li>Username: {user.user.username}</li>
           <li>Email address: {user.user.email}</li>
-          <li>Location: {user.user.location}</li>
+          <li>Location: {user.user.location}</li> */}
         </ul>
-      </div>
-      <div className='profile-button'>
-        <Button variant='contained'> Edit details </Button>
       </div>
     </>
   )
