@@ -1,8 +1,9 @@
 # 
 <h1 align="center">Online Shopping Community App</h1>
-This application can be used to access different varieties of online shops all under one roof, helping the customer for esier comparison and location of an item
 
 <p align="center"><img src="https://socialify.git.ci/Aimkeys-Sir/online-comm-frontend/image?forks=1&language=1&name=1&owner=1&pulls=1&stargazers=1&theme=Light"></p>
+
+This application can be used to access different varieties of online shops all under one roof, helping the customer for esier comparison and location of an item
 
 <h2>🚀 Demo</h2>
 
