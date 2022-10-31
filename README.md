@@ -47,3 +47,5 @@ npm test
 ```
 npm build
 ```
+
+<h2>🍰 Contribution Guidelines:</h2>
