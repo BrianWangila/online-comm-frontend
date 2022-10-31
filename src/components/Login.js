@@ -127,7 +127,7 @@ function signin(signindata) {
                 label="Username or Email address"
                 name="email"
                 autoComplete="email"
-                autoFocus
+                // autoFocus
               />
               <TextField
                 margin="normal"
@@ -142,7 +142,7 @@ function signin(signindata) {
                 autoComplete="current-password"
               />
                   <Grid item xs>
-                  <Link href="/resetpassword" variant="body2" style={{textDecoration:"none", float:"right", color: "orangered"}}>
+                  <Link href="/resetpassword" variant="body2" style={{textDecoration:"none", float:"right", color: "black"}}>
                     Forgot password?
                   </Link>
                 </Grid>
@@ -162,7 +162,7 @@ function signin(signindata) {
               </Button>
               <GoogleLogin
              clientId={clientId}
-             buttonText="Sign in with Google"
+             buttonText="Login with Google"
              onSuccess={onSuccess}
              onFailure={onFailure}
              cookiePolicy={'single_host_origin'}
@@ -176,8 +176,8 @@ function signin(signindata) {
                     {" Signup"}
                   </Link>
                 </Grid>
-                <Grid item style={{marginLeft: 2+'vw', textDecoration: "none"}}>
-                  or Go back to
+                <Grid item style={{marginLeft: 1+'vw', textDecoration: "none"}}>
+                or Go back to
                   <Link href="/" variant="body2" style={{textDecoration: "none", color: "orangered"}}>
                     {" Home"}
                   </Link>

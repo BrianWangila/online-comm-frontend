@@ -32,10 +32,11 @@ export default function SignUp({onLogin}) {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [location, setlocation] = useState("");
+  const [location, setLocation] = useState("");
   const [password, setPassword] = useState("");
   const [password_confirmation, setPassword_confirmation] = useState("");
   const [error, setError] = useState([])
+
 
   function handleSubmit(event) {
     const formData = {
@@ -65,7 +66,7 @@ export default function SignUp({onLogin}) {
   console.log('success:', res.getBasicProfile());
   const google = res.getBasicProfile()
   const signupdata = {name: google.Ad, email: google.cu, password: google.NT, password_confirmation: google.NT }
- signup(signupdata) 
+  signup(signupdata) 
 };
 const onFailure = (err) => {
   console.log('failed:', err);
@@ -87,10 +88,10 @@ const onFailure = (err) => {
   return (
     <div className="signup"> 
     <div>
-    <img id="phone"src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form"/>
+      <img id="phone"src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form-image"/>
     </div> 
-    <ThemeProvider theme={theme} className="signup-form">
-      <Container  component="main" maxWidth="xs" display="flex">
+    <ThemeProvider theme={theme}>
+      <Container  component="main" className="signup-form">
         <CssBaseline />
           <Typography id="h1" component="h1" variant="h3">
              Create an account
@@ -103,7 +104,7 @@ const onFailure = (err) => {
             <p style={{color: "red", fontSize: "small"}}>{error}</p>
 
             <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid item xs={12} className="form-input">
                 <TextField
                   autoComplete="given-name"
                   name="name"
@@ -111,7 +112,6 @@ const onFailure = (err) => {
                   fullWidth
                   id="name"
                   label="Name"
-                  autoFocus
                   value={name}
                   onChange={(e) => setName(e.target.value)} placeholder="Name"
                 />
@@ -124,7 +124,6 @@ const onFailure = (err) => {
                   fullWidth
                   id="username"
                   label="Username"
-                  autoFocus
                   value={username}
                   onChange={(e) => setUsername(e.target.value)} placeholder="Username"
                 />
@@ -152,7 +151,7 @@ const onFailure = (err) => {
                   id="location"
                   autoComplete="new-location"
                   value={location}
-                  onChange={(e) => setlocation(e.target.value)} placeholder="Location"
+                  onChange={(e) => setLocation(e.target.value)} placeholder="Location"
                 />
               </Grid>
 
@@ -182,21 +181,15 @@ const onFailure = (err) => {
                   onChange={(e) => setPassword_confirmation(e.target.value)} placeholder="Confirm Password"
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} style={{}}>
                 <FormControlLabel
+                  
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
+                  label="Receive marketing promotions and updates"
                 />
               </Grid>
             </Grid>
-            <GoogleLogin
-             clientId={clientId}
-             buttonText="Sign in with Google"
-             onSuccess={onSuccess}
-             onFailure={onFailure}
-             cookiePolicy={'single_host_origin'}
-             isSignedIn={true}
-             />
+            
             <Button
               type="submit"
               fullWidth
@@ -205,7 +198,18 @@ const onFailure = (err) => {
             >
               Create account
             </Button>
-            <hr className="horizontal"/>
+
+            <GoogleLogin
+              clientId={clientId}
+              buttonText="Sign in with Google"
+              onSuccess={onSuccess}
+              onFailure={onFailure}
+              cookiePolicy={'single_host_origin'}
+              isSignedIn={true}
+             />
+
+            <hr className="horizontal" />
+
             <Grid container justifyContent="flex-end" style={{fontSize: "small", textDecoration: "none"}}>
               <Grid item>
               Already have an account?
@@ -225,7 +229,7 @@ const onFailure = (err) => {
       </Container>
     </ThemeProvider>
     <div>
-    <img id="laptop" src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form"/>
+    <img id="laptop" src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form-image"/>
     </div> 
     </div>
   );
