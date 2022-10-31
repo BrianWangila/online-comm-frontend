@@ -60,3 +60,6 @@ Technologies used in the project:
 *   TailwindCSS
 
 <h2>🛡️ License:</h2>
+
+This project is licensed under the
+
