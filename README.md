@@ -1,5 +1,5 @@
 # 
-### This application can be used to learn interesting facts about various categories like technology and fitness via stories
+### This application can be used to access different varieties of online shops all under one roof, helping the customer for esier comparison and location of an item
 <h1 align="center">Online Shopping Community App</h1>
 
 <h2>🚀 Demo</h2>
