@@ -5,7 +5,7 @@ import ProductCard from './ProductCard'
 export default function Products({products,setProducts}) {
     const [trends,setTrends]=useState([])
     const[activeTrend,setActiveTrend]=useState("")
-   
+   console.log(products)
     useEffect((()=>{
         fetch("http://localhost:3000/trends")
         .then(res=>{

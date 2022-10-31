@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -6,10 +5,9 @@ import SearchPage from './components/SearchPage';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import ForgotPassword from './components/ForgotPassword'
-import SearchResults from './components/SearchResults';
+
 import Footer from './components/Footer';
-import SingleProduct from './components/SingleProduct';
-import ProductCard from './components/ProductCard';
+
 import Products from './components/Products';
 import { useEffect, useState } from 'react';
 
