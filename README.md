@@ -58,3 +58,5 @@ Technologies used in the project:
 
 *   React.js
 *   TailwindCSS
+
+<h2>🛡️ License:</h2>
