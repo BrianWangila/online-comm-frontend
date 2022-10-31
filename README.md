@@ -8,3 +8,14 @@
 
 ## Scripts to start project
 <h2>Project Screenshots:</h2>
+
+<h2>🧐 Features</h2>
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Here're some of the project's best features:
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+*   News about various categories delivered in form of stories
+*   New from over 9 distinct categories
