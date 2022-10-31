@@ -20,12 +20,15 @@ You will also see any lint errors in the console.
 *   News about various categories delivered in form of stories
 *   New from over 9 distinct categories
 
+### `npm test`
 <h2>🛠️ Installation Steps:</h2>
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 <p>1. Runs the app in the development mode.</p>
 
+### `npm build`
+```
 npm start
 ```
 
