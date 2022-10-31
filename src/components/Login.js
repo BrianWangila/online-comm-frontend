@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
+import {Button, Typography, Container, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box} from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "../style/login.css";
 import { GoogleLogin } from 'react-google-login';
 import { gapi } from 'gapi-script';
+
+
 
 function Copyright(props) {
   return (
@@ -24,6 +15,7 @@ function Copyright(props) {
       align="center"
       {...props}
     >
+      
       {"Copyright © "}
       <Link color="inherit" href="#" style={{textDecoration: "none"}}>
         MURIFE
@@ -118,9 +110,10 @@ function signin(signindata) {
               <p style={{color: "red", fontSize: "small"}}>{message}</p>
 
               <TextField
+                className="textfield-box"
                 margin="normal"
                 required
-                fullWidth
+                // fullWidth
                 id="email"
                 onChange={e=>setLoginDetails(details=>({...details, userdetails:e.target.value}))}
                 value={loginDetails.userdetails}
@@ -130,9 +123,10 @@ function signin(signindata) {
                 // autoFocus
               />
               <TextField
+                className="textfield-box"
                 margin="normal"
                 required
-                fullWidth
+                // fullWidth
                 name="password"
                 label="Password"
                 value={loginDetails.password}
@@ -142,16 +136,16 @@ function signin(signindata) {
                 autoComplete="current-password"
               />
                   <Grid item xs>
-                  <Link href="/resetpassword" variant="body2" style={{textDecoration:"none", float:"right", color: "black"}}>
+                  <Link href="/resetpassword" variant="body2" style={{textDecoration:"none", marginRight: 3+"vw", float:"right", color: "black"}}>
                     Forgot password?
                   </Link>
                 </Grid>
 
               <FormControlLabel
-                style={{}}
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
+
               <Button
                 type="submit"
                 // fullWidth
@@ -168,8 +162,8 @@ function signin(signindata) {
              cookiePolicy={'single_host_origin'}
              isSignedIn={true}
              />
-             <hr className="horizontal"/>
-              <Grid container style={{fontSize: "small", marginTop: "2vh", textAlign:'center'}}>
+             {/* <hr className="horizontal"/> */}
+              <Grid container className="signup-text" >
                 <Grid item>
                   Don't have an account?
                   <Link href="/signup" variant="body2" style={{textDecoration: "none", color: "orangered"}}>
