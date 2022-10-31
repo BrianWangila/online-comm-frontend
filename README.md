@@ -6,7 +6,6 @@
 
 [https:](https:)
 
-## Scripts to start project
 <h2>Project Screenshots:</h2>
 
 <h2>🧐 Features</h2>
