@@ -11,7 +11,6 @@ import Footer from './components/Footer';
 import Products from './components/Products';
 import { useEffect, useState } from 'react';
 
-import Profile from './components/Profile';
 import { CircularProgress} from '@material-ui/core';
 
 function App() {
@@ -80,10 +79,6 @@ function App() {
         }></Route>
         <Route path="/login" element={<Login onLogin={onLogin}/>}/>
         <Route path='/signup' element={<SignUp onLogin={onLogin}/>}/>
-        <Route path='/profile' element={<Profile user={user} />}/>
-
-        <Route path="/login" element={<Login onLogin={onLogin} />} />
-        <Route path='/signup' element={<SignUp onLogin={onLogin} />} />
         <Route path='/resetpassword' element={<ForgotPassword />} />
       </Routes>
     </div>
