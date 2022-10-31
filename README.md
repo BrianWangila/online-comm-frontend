@@ -1,6 +1,6 @@
 # 
-### This application can be used to access different varieties of online shops all under one roof, helping the customer for esier comparison and location of an item
 <h1 align="center">Online Shopping Community App</h1>
+This application can be used to access different varieties of online shops all under one roof, helping the customer for esier comparison and location of an item
 
 <h2>🚀 Demo</h2>
 
