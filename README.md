@@ -22,3 +22,28 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 <h2>🛠️ Installation Steps:</h2>
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>1. Runs the app in the development mode.</p>
+
+### `npm build`
+```
+npm start
+```
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+<p>2. Launches the test runner in the interactive watch mode.</p>
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+```
+npm test
+```
+
+<p>3. Builds the app for production to the build folder.</p>
+
+```
+npm build
+```
