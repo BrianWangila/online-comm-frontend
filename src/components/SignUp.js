@@ -1,18 +1,12 @@
 import React, {useState, useEffect} from "react";
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import {CssBaseline, TextField, Checkbox, Link, Grid, Box, Typography, Container, Button, FormControlLabel} from '@mui/material/';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import "../style/signup.css"
 import { GoogleLogin } from 'react-google-login';
 import { gapi } from 'gapi-script';
+
+
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -25,6 +19,7 @@ function Copyright(props) {
     </Typography>
   );
 }
+
 
 const theme = createTheme();
 
@@ -52,6 +47,7 @@ export default function SignUp({onLogin}) {
     signup(formData)
   }
 
+
   const clientId = '402509286566-rc7onvlh0f5n89779pb34hhhkerqv9j6.apps.googleusercontent.com';
   useEffect(() => {
     const initClient = () => {
@@ -62,15 +58,18 @@ export default function SignUp({onLogin}) {
      };
      gapi.load('client:auth2', initClient);
  });
+
  const onSuccess = (res) => {
   console.log('success:', res.getBasicProfile());
   const google = res.getBasicProfile()
   const signupdata = {name: google.Ad, email: google.cu, password: google.NT, password_confirmation: google.NT }
   signup(signupdata) 
 };
+
 const onFailure = (err) => {
   console.log('failed:', err);
 };
+
  function signup(signupdata) {
   fetch('http://127.0.0.1:3000/signup', {
       method: "POST",
@@ -92,7 +91,7 @@ const onFailure = (err) => {
     </div> 
     <ThemeProvider theme={theme}>
       <Container  component="main" className="signup-form">
-        <CssBaseline />
+        {/* <CssBaseline /> */}
           <Typography id="h1" component="h1" variant="h3">
              Create an account
           </Typography>
@@ -109,7 +108,7 @@ const onFailure = (err) => {
                   autoComplete="given-name"
                   name="name"
                   required
-                  fullWidth
+                 style={{width: 30+"vw"}}
                   id="name"
                   label="Name"
                   value={name}
@@ -121,7 +120,7 @@ const onFailure = (err) => {
                   autoComplete="given-name"
                   name="username"
                   required
-                  fullWidth
+                  style={{width: 30+"vw"}}
                   id="username"
                   label="Username"
                   value={username}
@@ -131,7 +130,7 @@ const onFailure = (err) => {
               <Grid item xs={12}>
                 <TextField
                   required
-                  fullWidth
+                  style={{width: 30+"vw"}}
                   id="email"
                   label="Email Address"
                   name="email"
@@ -144,7 +143,7 @@ const onFailure = (err) => {
               <Grid item xs={12}>
                 <TextField
                   required
-                  fullWidth
+                  style={{width: 30+"vw"}}
                   name="location"
                   label="Location"
                   type="location"
@@ -158,7 +157,7 @@ const onFailure = (err) => {
               <Grid item xs={12}>
                 <TextField
                   required
-                  fullWidth
+                  style={{width: 30+"vw"}}
                   name="password"
                   label="Password"
                   type="password"
@@ -171,7 +170,7 @@ const onFailure = (err) => {
                  <Grid item xs={12}>
                 <TextField
                   required
-                  fullWidth
+                  style={{width: 30+"vw"}}
                   name="password_confirmation"
                   label="Confirm Password"
                   type="password"
@@ -181,55 +180,56 @@ const onFailure = (err) => {
                   onChange={(e) => setPassword_confirmation(e.target.value)} placeholder="Confirm Password"
                 />
               </Grid>
-              <Grid item xs={12} style={{}}>
+              <Grid item xs={12} >
                 <FormControlLabel
-                  
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
                   label="Receive marketing promotions and updates"
                 />
               </Grid>
             </Grid>
             
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Create account
-            </Button>
+            <div xs={12} className="buttons-flex">
+              <Button
+               style={{backgroundColor: "black"}}
+                type="submit"
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Create account
+              </Button>
 
-            <GoogleLogin
-              clientId={clientId}
-              buttonText="Sign in with Google"
-              onSuccess={onSuccess}
-              onFailure={onFailure}
-              cookiePolicy={'single_host_origin'}
-              isSignedIn={true}
-             />
+              <GoogleLogin
+                clientId={clientId}
+                buttonText="Sign in with Google"
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+                cookiePolicy={'single_host_origin'}
+                isSignedIn={true}
+              />
+             </div>
 
-            <hr className="horizontal" />
+            {/* <hr className="horizontal" /> */}
 
-            <Grid container justifyContent="flex-end" style={{fontSize: "small", textDecoration: "none"}}>
+            <Grid container justifyContent="center" style={{fontSize: "small", marginTop:2+"vh", textDecoration: "none"}}>
               <Grid item>
               Already have an account?
                 <Link href="/login" variant="body2" style={{textDecoration: "none", color: "orangered"}}>
                    {" Login"}
                 </Link>
               </Grid>
-              <Grid item>
-              Not interested, go back to 
+              <Grid item className="account-text" >
+               Not interested, go back to 
                 <Link href="/" variant="body2" style={{textDecoration: "none", color: "orangered"}}>
                    {" Home"}
                 </Link>
               </Grid>
             </Grid>
           </Box>
-        <Copyright sx={{ mt: 5 }} />
+        <Copyright sx={{ mt: 2 }} />
       </Container>
     </ThemeProvider>
-    <div>
-    <img id="laptop" src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form-image"/>
+    <div id="laptop">
+      <img src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form-image"/>
     </div> 
     </div>
   );

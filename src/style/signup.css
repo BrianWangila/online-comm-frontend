@@ -1,19 +1,24 @@
 .signup {
   /* height: 100vh; */
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
 
 }
+
 #h1 {
     font-size: 25px;
 }
+
 #h5 {
     font-size: 13px;
 }
 
-#lappy {
+#laptop {
     display: none;
 }
 
+.promos-text {
+    font-size: 25px;
+}
 
 #phone {
     display: content;
@@ -24,27 +29,44 @@
 }
 
 .signup-form {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
 }
 
 @media only screen and (min-width: 430px) {
 
     .signup {
-        display: flex;   
-        /* height: 100vh; */
-        /* align-items: center; */
+        display: flex;
+        align-items: center;
     }
 
     .signup-form {
-        border: 1px solid rgb(21, 255, 0);
+        /* border: 1px solid rgb(21, 255, 0); */
         width: 40vw;
-    
+        /* height: 100vh; */
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
     }
-    #lappy {
-        display: block;
-        width:  45vw;
-        margin-right: 100px;
+
+    .account-text {
+        padding-left: 1vw;
+    }
+
+    .buttons-flex {
+        display: flex;
+        flex-direction: column;
+        width: 28vw;
+        align-items: end;
+    }
+
+    #laptop img {
+        display: flex;
+        /* border: 2px solid red; */
+        height:  80vh;
+        align-items: center;
+        margin-top: 10vh;
+        /* margin-right: 100px; */
     }
 
     #phone {
@@ -58,7 +80,5 @@
         font-size: 15px;
     }
 
-    .horizontal {
-        width: 30vw;
-    }
+
 }
