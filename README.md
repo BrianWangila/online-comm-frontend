@@ -49,3 +49,6 @@ npm build
 ```
 
 <h2>🍰 Contribution Guidelines:</h2>
+
+Please contribute using GitHub Flow. Create a branch add commits and open a pull request.
+
