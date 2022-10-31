@@ -1,11 +1,18 @@
 import React, { useState  } from 'react'
 import '../style/UserAvatar.css'
-import { Avatar } from '@mui/material'
+
+import { Avatar, Dialog } from '@material-ui/core'
 import { useNavigate } from 'react-router-dom'
 import { GoogleLogout } from 'react-google-login';
+
+
+
+
+
 function UserAvatar({ user }) {
   const navigate = useNavigate()
   const [ profile, setProfile ] = useState([]);
+  const [open, setOpen] = useState(false)
   const clientId = '402509286566-rc7onvlh0f5n89779pb34hhhkerqv9j6.apps.googleusercontent.com';
   
   const handleLogout = () => {
@@ -18,6 +25,13 @@ function UserAvatar({ user }) {
 
   const handleProfile = () => {
     navigate('/profile')
+
+
+  const handleOpen = () => {
+    setOpen(true)
+  }
+  const handleClose = () => {
+    setOpen(false)
   }
  
   const logOut = () => {
@@ -39,7 +53,7 @@ function UserAvatar({ user }) {
           <li type="button" onClick={handleProfile}>Profile</li>
           <button onClick={handleLogout}>Logout</button> 
         </ul>
-        <GoogleLogout clientId={clientId} buttonText="Log out" onLogoutSuccess={logOut} />
+        <GoogleLogout clientId={clientId} buttonText="Logout" onLogoutSuccess={logOut} />
       </div>
     </>
   )
