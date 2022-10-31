@@ -15,7 +15,7 @@ function Profile({user}) {
         </ul>
       </div>
       <div className='profile-button'>
-        <Button> Edit details </Button>
+        <Button variant='contained'> Edit details </Button>
       </div>
     </>
   )
