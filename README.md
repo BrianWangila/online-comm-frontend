@@ -63,3 +63,4 @@ Technologies used in the project:
 
 This project is licensed under the
 
+<h2>💖Like our work?</h2>
