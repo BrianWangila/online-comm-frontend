@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom'
 import '../style/navbar.css'
 import UserAvatar from './UserAvatar'
 
+
+
 export default function Navbar({user}){
     const navigate=useNavigate()
     function handleLoginOnclick(){
@@ -9,7 +11,9 @@ export default function Navbar({user}){
     }
     return (
         <div className="navbar">
-            <div className="navbar-logo">Murife</div>
+            <div className="navbar-logo">
+                <img id='logo' src='../images/logo.png' alt='logo' />
+            </div>
             {user?
             <div>
                 <UserAvatar user={user}/>
