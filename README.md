@@ -5,6 +5,8 @@
 
 This application can be used to access different varieties of online shops all under one roof, helping the customer for esier comparison and location of an item
 
+<p align="center"><img src="https://img.shields.io/github/issues/Aimkeys-Sir/online-comm-frontend" alt="shields"><img src="https://img.shields.io/github/forks/Aimkeys-Sir/online-comm-frontend" alt="shields"><img src="https://img.shields.io/github/stars/Aimkeys-Sir/online-comm-frontend" alt="shields"><img src="https://img.shields.io/github/license/Aimkeys-Sir/online-comm-frontend" alt="shields"></p>
+
 <h2>🚀 Demo</h2>
 
 [https:](https:)
