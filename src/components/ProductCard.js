@@ -14,9 +14,9 @@ export default function ProductCard({product}) {
     return (
         <div className='product-card'>
             <div className='product-card-image'>
-                <img className='product-image' src={product.image_url} />
+                <img className='product-image' src={product.image_url} alt={product.name.slice(0,15)}/>
                 <div className='product-shop-image'>
-                    <img src={`/icons/${product.shop}.png`} />
+                    <img src={`/icons/${product.shop}.png`}  alt={product.shop}/>
                 </div>
                 <div className='product-discount'>
                     <p>{product.discount}</p>
@@ -30,8 +30,8 @@ export default function ProductCard({product}) {
                     <p className='pro-p p-price-cancelled'>{product.price_before_discount}</p>
                 </div>
                 <div className='product-stars'>
-                    {rating?stars.map(star=><img className={`star ${star?"star-on":"star-off"}`} src='/icons/star.svg'/>):null}
-                <p className='pro-p product-ratings'>{product.rated_products}</p> 
+                    {rating?stars.map(star=><img className={`star ${star?"star-on":"star-off"}`} src='/icons/star.svg' alt='s'/>):null}
+                <p className='pro-p product-ratings'>{product.rated_products?"("+product.rated_products+")" :""}</p> 
                 </div>
             </div>
         </div>

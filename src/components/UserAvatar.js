@@ -9,7 +9,7 @@ import { GoogleLogout } from 'react-google-login';
 
 
 
-function UserAvatar({ user }) {
+export default function UserAvatar({ user }) {
   const navigate = useNavigate()
   const [ profile, setProfile ] = useState([]);
   const [open, setOpen] = useState(false)
@@ -25,8 +25,7 @@ function UserAvatar({ user }) {
 
   const handleProfile = () => {
     navigate('/profile')
-
-
+  }
   const handleOpen = () => {
     setOpen(true)
   }
@@ -58,5 +57,3 @@ function UserAvatar({ user }) {
     </>
   )
 }
-
-export default UserAvatar
