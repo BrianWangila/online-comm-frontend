@@ -25,7 +25,7 @@ function Copyright(props) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="#">
+      <Link color="inherit" href="#" style={{textDecoration: "none"}}>
         MURIFE
       </Link>{" "}
       {new Date().getFullYear()}
@@ -82,29 +82,30 @@ function signin(signindata) {
 }
 
   return (
-    <div className="login">
+    <div className="login" style={{maxHeight: 100+"vh"}}>
       <div>
         <img
-          id="phone"
+          id="phone-img"
           src="https://images.assetsdelivery.com/compings_v2/liravega258/liravega2581810/liravega258181000007.jpg"
           alt="login image"
         />
       </div>
-      <ThemeProvider theme={theme}>
-        <Container component="main" maxWidth="xs">
+      <ThemeProvider theme={theme} className="themeprovider-login">
+        <Container component="main" maxWidth="xs" className="login-form">
           <CssBaseline />
           <Box
+            className="login-box"
             sx={{
-              marginTop: 8,
+              marginTop: 3,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
             }}
           >
-            <Typography component="h1" variant="h">
+            <Typography component="h2" variant="h" className="welcome-message">
               Welcome back
             </Typography>
-            <Typography component="h">
+            <Typography component="h" style={{fontSize: "small"}}>
               Enter your details below to login
             </Typography>
             
@@ -112,7 +113,7 @@ function signin(signindata) {
               component="form"
               onSubmit={handleSubmit}
               noValidate
-              sx={{ mt: 1 }}
+              // sx={{ mt: 1 }}
             >
               <p style={{color: "red", fontSize: "small"}}>{message}</p>
 
@@ -121,9 +122,9 @@ function signin(signindata) {
                 required
                 fullWidth
                 id="email"
-                onChange={e=>setLoginDetails(details=>({...details,userdetails:e.target.value}))}
+                onChange={e=>setLoginDetails(details=>({...details, userdetails:e.target.value}))}
                 value={loginDetails.userdetails}
-                label="Username or email Address"
+                label="Username or Email address"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -140,14 +141,20 @@ function signin(signindata) {
                 id="password"
                 autoComplete="current-password"
               />
+                  <Grid item xs>
+                  <Link href="/resetpassword" variant="body2" style={{textDecoration:"none", float:"right", color: "orangered"}}>
+                    Forgot password?
+                  </Link>
+                </Grid>
 
               <FormControlLabel
+                style={{}}
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
               <Button
                 type="submit"
-                fullWidth
+                // fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
@@ -161,16 +168,18 @@ function signin(signindata) {
              cookiePolicy={'single_host_origin'}
              isSignedIn={true}
              />
-              <Grid container>
-                <Grid item xs>
-                  <Link href="/resetpassword" variant="body2">
-                    Forgot password?
+             <hr className="horizontal"/>
+              <Grid container style={{fontSize: "small", marginTop: "2vh", textAlign:'center'}}>
+                <Grid item>
+                  Don't have an account?
+                  <Link href="/signup" variant="body2" style={{textDecoration: "none", color: "orangered"}}>
+                    {" Signup"}
                   </Link>
                 </Grid>
-                <Grid item>
-                Don't have an account?
-                  <Link href="/signup" variant="body2">
-                    {" Signup"}
+                <Grid item style={{marginLeft: 2+'vw', textDecoration: "none"}}>
+                  or Go back to
+                  <Link href="/" variant="body2" style={{textDecoration: "none", color: "orangered"}}>
+                    {" Home"}
                   </Link>
                 </Grid>
               </Grid>
