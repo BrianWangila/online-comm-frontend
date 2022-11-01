@@ -17,6 +17,9 @@ function App() {
   const [products, setProducts] = useState(null)
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [search, setSearch] = useState("")
+
+  const[searchFor,setSearchFor]=useState("")
 
   const navigate = useNavigate()
 
@@ -53,6 +56,33 @@ function App() {
         }
       })
   }), [token])
+  
+    function handleSearch(e) {
+        e.preventDefault()
+        setLoading(true)
+        fetch("http://localhost:3000/search", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            },
+            body: JSON.stringify({
+                "search_term": search
+            })
+        })
+            .then(res => {
+                if (res.ok) {
+                    res.json().then(products=>{
+                        setProducts(products)
+                        setLoading(false)
+                        setSearchFor(search)
+                        setSearch("")
+                    })
+                } else {
+                    console.log(res)
+                }
+            })
+    }
 
   function onLogin(newUser) {
     navigate("/")
@@ -72,8 +102,8 @@ function App() {
             <div>
             </div>
             <Navbar user={user} />
-            <SearchPage setProducts={setProducts} setLoading={setLoading} />
-            {products ? <Products products={products} setProducts={setProducts} user={user} /> : null}
+            <SearchPage handleSearch={handleSearch} search={search} setSearch={setSearch}/>
+            {products ? <Products setSearchFor={setSearchFor} searchFor={searchFor} products={products} setProducts={setProducts} user={user} token={token}/> : null}
             <Footer />
           </>
         }></Route>

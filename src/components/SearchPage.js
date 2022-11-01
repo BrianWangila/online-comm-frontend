@@ -1,32 +1,8 @@
 import { useState } from 'react'
 import '../style/search-page.css'
 
-export default function SearchPage({setProducts,setLoading}) {
-    const [search, setSearch] = useState("")
-    function handleSearch(e) {
-        e.preventDefault()
-        console.log("here",search);
-        setLoading(true)
-        fetch("http://localhost:3000/search", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                "search_term": search
-            })
-        })
-            .then(res => {
-                if (res.ok) {
-                    res.json().then(products=>{
-                        setProducts(products)
-                        setLoading(false)
-                    })
-                } else {
-                    console.log(res)
-                }
-            })
-    }
+export default function SearchPage({handleSearch,search,setSearch}) {
+    
     return (
         <div className="search-page">
             <div className='search-div'>
