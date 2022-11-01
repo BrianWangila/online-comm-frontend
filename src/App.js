@@ -74,7 +74,7 @@ function App() {
             </div>
             <Navbar user={user} />
             <SearchPage setProducts={setProducts} setLoading={setLoading} />
-            {products ? <Products products={products} setProducts={setProducts} /> : null}
+            {products ? <Products products={products} setProducts={setProducts} user={user} /> : null}
             <Footer />
           </>
         }></Route>
