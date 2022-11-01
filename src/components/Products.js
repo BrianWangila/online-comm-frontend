@@ -11,8 +11,11 @@ export default function Products({ products, setProducts, user}) {
         fetch("http://localhost:3000/trends")
             .then(res => {
                 if (res.ok) {
-                    res.json().then(setTrends)
-                    setActiveTrend(trends[0].search_term)
+                    res.json().then(t=>{
+                        setTrends(t)
+                        setActiveTrend(t[0].search_term)
+                    })
+                    
                 }
             })
     }), [])
@@ -30,7 +33,7 @@ export default function Products({ products, setProducts, user}) {
                 }
             })
         }
-    }), [user])
+    }), [])
 
     function handleTrendClick(trend) {
         setActiveTrend(trend.search_term)
@@ -46,7 +49,7 @@ export default function Products({ products, setProducts, user}) {
         return (
             <div className='trend-buttons'>
                 {data.map((trend, index) => {
-                    return <button onClick={() => handleTrendClick(trend)} id={activeTrend === trend.search_term ? "active-trend" : ""}>{trend.search_term}</button>
+                    return <button key={index} onClick={() => handleTrendClick(trend)} id={activeTrend === trend.search_term ? "active-trend" : ""}>{trend.search_term}</button>
                 })}
             </div>
         )
