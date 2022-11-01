@@ -13,7 +13,7 @@ This application can be used to access different varieties of online shops all u
 
 <h2>Project Screenshots:</h2>
 
-<p align="center"><img src="./public/images//home/moringa/Documents/Practice/phase5/online-comm-frontend/public/images/Screenshot from 2022-11-01 13-41-26.png"></p>
+<p align="center"><img src="./public/images/screen1"></p>
 
 <h2>🧐 Features</h2>
 
