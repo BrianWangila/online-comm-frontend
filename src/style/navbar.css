@@ -13,6 +13,10 @@
 .navbar-logo{
     font-size: 20px;
 }
+#logo{
+    width: 100px;
+    left:0px
+}
 .navbar-login{
     width: 100px;
     height: 35px;
