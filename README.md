@@ -14,7 +14,7 @@ This application can be used to access different varieties of online shops all u
 <h2>Project Screenshots:</h2>
 
 <p align="center"><img src="../images/screen1.png"></p>
-  <img id='logo' src='../images/logo.png' alt='logo' />
+  <img id='logo' src='../public/images/logo.png' alt='logo' />
 
 <h2>🧐 Features</h2>
 
