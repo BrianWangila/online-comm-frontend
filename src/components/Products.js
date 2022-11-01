@@ -63,7 +63,7 @@ export default function Products({ products, setProducts, user}) {
                     <img src='/icons/trends.png' />
                 </div>
                 {<div className='phone-trends'>
-                    <Trends />
+                    <Trends data={trends}/>
                 </div>
                 }
                 <div className='product-cards'>
