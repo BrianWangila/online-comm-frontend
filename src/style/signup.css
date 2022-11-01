@@ -1,6 +1,5 @@
 .signup {
-  /* height: 100vh; */
-  /* border: 3px solid blue; */
+  
 
 }
 
@@ -23,7 +22,6 @@
 #phone {
     display: content;
     border: 1px solid red;
-    height: ;
     width: 60vw ;
     align-items: center;
 }
@@ -41,9 +39,7 @@
     }
 
     .signup-form {
-        /* border: 1px solid rgb(21, 255, 0); */
         width: 40vw;
-        /* height: 100vh; */
         display: flex;
         flex-direction: column;
         justify-content:center;
@@ -62,11 +58,9 @@
 
     #laptop img {
         display: flex;
-        /* border: 2px solid red; */
         height:  80vh;
         align-items: center;
         margin-top: 10vh;
-        /* margin-right: 100px; */
     }
 
     #phone {
