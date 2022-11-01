@@ -13,7 +13,7 @@ This application can be used to access different varieties of online shops all u
 
 <h2>Project Screenshots:</h2>
 
-<p align="center"><img src="./public/images/screen1"></p>
+<p align="center"><img src="../images/screen1"></p>
 
 <h2>🧐 Features</h2>
 
