@@ -14,11 +14,12 @@ This application can be used to access different varieties of online shops all u
 <h2>Project Screenshots:</h2>
 
 <p align="center"><img src="../images/screen1.png"></p>
+  <img id='logo' src='../images/logo.png' alt='logo' />
 
 <h2>🧐 Features</h2>
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
 Here're some of the project's best features:
 
 The page will reload if you make edits.\
