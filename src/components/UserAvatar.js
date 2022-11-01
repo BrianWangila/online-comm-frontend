@@ -3,7 +3,6 @@ import '../style/UserAvatar.css'
 
 import { Avatar, Dialog } from '@material-ui/core'
 import { useNavigate } from 'react-router-dom'
-import { GoogleLogout } from 'react-google-login';
 
 
 
@@ -11,14 +10,13 @@ import { GoogleLogout } from 'react-google-login';
 
 export default function UserAvatar({ user }) {
   const navigate = useNavigate()
-  const [ profile, setProfile ] = useState([]);
   const [open, setOpen] = useState(false)
-  const clientId = '402509286566-rc7onvlh0f5n89779pb34hhhkerqv9j6.apps.googleusercontent.com';
+ 
   
   const handleLogout = () => {
     localStorage.removeItem('jwt')
-    window. location. reload() 
-    
+    localStorage.removeItem('oauth2')
+    window. location. reload()  
   }
 
   
@@ -33,10 +31,7 @@ export default function UserAvatar({ user }) {
     setOpen(false)
   }
  
-  const logOut = () => {
-    setProfile(null);
-    navigate('/login')
-  };
+  
 
 
   return (
@@ -52,7 +47,6 @@ export default function UserAvatar({ user }) {
           <li type="button" onClick={handleProfile}>Profile</li>
           <button onClick={handleLogout}>Logout</button> 
         </ul>
-        <GoogleLogout clientId={clientId} buttonText="Logout" onLogoutSuccess={logOut} />
       </div>
     </>
   )
