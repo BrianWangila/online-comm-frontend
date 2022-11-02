@@ -53,10 +53,37 @@
     .trend-buttons{
         display: flex;
         flex-direction: column;
-        margin-top: 40px;
+        /* margin-top: 40px; */
     }
     .trend-buttons button{
         font-size: 16px;
         padding: 5px;
+    }
+    .search-results-title{
+        display: flex;
+        align-items: center;
+    }
+    .search-results-title img{
+        height: 25px;
+    }
+    .search-results-title p{
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .search-history div{
+        display: flex;
+        flex-wrap: nowrap;
+        width: 170px;
+        padding: 5px 0 5px 5px;
+    }
+    .search-history img{
+        height: 25px;
+    }
+    .search-history p{
+        font-size: 18px;
+        font-weight: 600;
+        margin: auto 0px;
+        word-wrap: normal;
     }
 }

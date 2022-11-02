@@ -30,7 +30,7 @@ export default function ProductCard({product}) {
                     <p className='pro-p p-price-cancelled'>{product.price_before_discount}</p>
                 </div>
                 <div className='product-stars'>
-                    {rating?stars.map(star=><img className={`star ${star?"star-on":"star-off"}`} src='/icons/star.svg' alt='s'/>):null}
+                    {rating?stars.map((star,index)=><img key={index} className={`star ${star?"star-on":"star-off"}`} src='/icons/star.svg' alt='s'/>):null}
                 <p className='pro-p product-ratings'>{product.rated_products?"("+product.rated_products+")" :""}</p> 
                 </div>
             </div>
