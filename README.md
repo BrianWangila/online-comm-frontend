@@ -7,6 +7,9 @@ This application can be used to access different varieties of online shops all u
 
 <p align="center"><img src="https://img.shields.io/github/issues/Aimkeys-Sir/online-comm-frontend" alt="shields"><img src="https://img.shields.io/github/forks/Aimkeys-Sir/online-comm-frontend" alt="shields"><img src="https://img.shields.io/github/stars/Aimkeys-Sir/online-comm-frontend" alt="shields"><img src="https://img.shields.io/github/license/Aimkeys-Sir/online-comm-frontend" alt="shields"></p>
 
+<h2>Contributed by;</h2>
+
+
 <h2>🚀 Demo</h2>
 
 [https:](https:)
@@ -28,25 +31,17 @@ You will also see any lint errors in the console.
 
 <h2>🛠️ Installation Steps:</h2>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-<p>1. Runs the app in the development mode.</p>
-
-```
-npm start
-```
-
-<p>2. Launches the test runner in the interactive watch mode.</p>
-
-```
-npm test
-```
-
-<p>3. Builds the app for production to the build folder.</p>
-
-```
-npm build
-```
+ *****
+ * Clone this repo using this command : git clone "https://github.com/musyoki12/Franhel-Home-Retouch.git"
+ * Unzip the downloaded files in a folder of choice.
+ * Open the index file from the zipped file wih browser of choice but prefferably google chrome.
+ * Open the index file from the zipped file wih browser of choice but preferably google chrome.
+ * Run
+    - npm install --prefix client
+    - bundle install
+    - rails db:migrate
+    - rails db:seed
+ *****
 
 <h2>🍰 Contribution Guidelines:</h2>
 
