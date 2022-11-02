@@ -51,8 +51,16 @@ Please contribute using GitHub Flow. Create a branch add commits and open a pull
 
 Technologies used in the project:
 
-*   React.js
-*   TailwindCSS
+ * Ruby
+    - Rails
+ * Javascript
+    - REACT
+ * SQL/PostreSQL
+ * HTML
+ * CSS
+ * CSS 
+    - Bootstrap
+    - Material-UI
 
 <h2>🛡️ License:</h2>
 
