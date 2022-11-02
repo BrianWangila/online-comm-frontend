@@ -9,17 +9,17 @@
     position: sticky;
     top: 0px;
     z-index: 100;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 .navbar-logo{
     font-size: 20px;
 }
 #logo{
-    width: 200px;
-    height: 180px;
-    top: 0px;
-    left:0px;
-
+    width: 60px;
+    height: 50px;
 }
+
 .navbar-login{
     width: 100px;
     height: 35px;
@@ -33,9 +33,6 @@
     border: none;
 }
 
-.user-avatar {
-    
-}
 
 @media only screen and (min-width:768px) {
     .navbar-login{
