@@ -29,6 +29,14 @@ You will also see any lint errors in the console.
 *   News about various categories delivered in form of stories
 *   New from over 9 distinct categories
 
+<h2>Requirements:</h2>
+ * Access to a computer, laptop or phone 
+ * Access to a computer, laptop or phone
+ * Ruby v.2.7.4
+ * Rails v.7.0.4
+ * NVM installed in you machine
+ * Access to the internet <br>
+
 <h2>🛠️ Installation Steps:</h2>
 
  *****
