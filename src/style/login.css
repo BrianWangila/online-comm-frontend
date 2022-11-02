@@ -36,21 +36,34 @@
     display: flex;
     height: 100vh;
     align-items: center;
-}
+  }
 
-.login-box {
-  margin-bottom: -5vh;
-}
+  .textfield-box {
+    width: 25vw;
+  }
 
-.login-form {
-  border-radius: 10px;
-  border: 1px solid rgb(180, 175, 175);
-}
+  .signup-text {
+    font-size: small;
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
 
-.login-form Button {
-  width: 20vw;
-  height: 7vh;
-}
+  }
+
+  .login-box {
+    margin-bottom: -5vh;
+  }
+
+  .login-form {
+    margin-bottom: 1vh;
+    border-radius: 10px;
+    border: 1px solid rgb(180, 175, 175);
+  }
+
+  .login-form Button {
+    width: 20vw;
+    height: 50px;
+  }
 
   #laptop {
     display: block;
@@ -58,10 +71,16 @@
     margin-right: 5vw;
   }
 
+  .horizontal {
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    /* margin-left: 40px; */
+  }
+
   .welcome-message {
     font-size: 23px;
   }
-
 
   #phone-img {
     display: none;

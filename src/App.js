@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -6,14 +5,12 @@ import SearchPage from './components/SearchPage';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import ForgotPassword from './components/ForgotPassword'
-import SearchResults from './components/SearchResults';
+
 import Footer from './components/Footer';
-import SingleProduct from './components/SingleProduct';
-import ProductCard from './components/ProductCard';
+
 import Products from './components/Products';
 import { useEffect, useState } from 'react';
 
-import Profile from './components/Profile';
 import { CircularProgress} from '@material-ui/core';
 
 function App() {
@@ -76,16 +73,12 @@ function App() {
             </div>
             <Navbar user={user} />
             <SearchPage setProducts={setProducts} setLoading={setLoading} />
-            {products ? <Products products={products} setProducts={setProducts} /> : null}
+            {products ? <Products products={products} setProducts={setProducts} user={user} /> : null}
             <Footer />
           </>
         }></Route>
         <Route path="/login" element={<Login onLogin={onLogin}/>}/>
         <Route path='/signup' element={<SignUp onLogin={onLogin}/>}/>
-        <Route path='/profile' element={<Profile user={user} />}/>
-
-        <Route path="/login" element={<Login onLogin={onLogin} />} />
-        <Route path='/signup' element={<SignUp onLogin={onLogin} />} />
         <Route path='/resetpassword' element={<ForgotPassword />} />
       </Routes>
     </div>
