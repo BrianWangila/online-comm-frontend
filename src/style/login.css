@@ -10,6 +10,10 @@
   
 }
 
+#email{
+  width: auto;
+}
+
 .login-form {
   margin-bottom: -7vh;
 }
