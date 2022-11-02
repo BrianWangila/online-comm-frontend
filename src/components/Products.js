@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import '../style/products.css'
 import ProductCard from './ProductCard'
 
-export default function Products({ products, searchFor, setSearchFor, setProducts, token,user}) {
+export default function Products({ products, searchFor, setSearchFor, setProducts, token, user }) {
     const [trends, setTrends] = useState([])
     const [activeTrend, setActiveTrend] = useState("")
     const [history, setHistory] = useState([])
@@ -30,12 +30,12 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
             }).then(res => {
                 if (res.ok) {
                     res.json().then(setHistory)
-                }else{
+                } else {
                     res.json().then(console.log)
                 }
             })
         }
-    }), [user,searchFor])
+    }), [user, searchFor])
 
     function handleTrendClick(trend) {
         setActiveTrend(trend.search_term)
@@ -65,14 +65,14 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
     return (
         <div className='products'>
             <div>
-                {user?
+                {user ?
                     <div className='search-history'>
                         <div>
                             <img src='/icons/history.png' alt='history' />
                             <p>Search History</p>
                         </div>
-                        <Trends data={history}/>
-                    </div>:null
+                        <Trends data={history} />
+                    </div> : null
                 }
                 {<div className='desktop-trends'>
                     <div className='products-trends'>
@@ -84,6 +84,10 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
                 }
             </div>
             <div>
+                <div className='products-trends for-phone'>
+                    <p>Trends</p>
+                    <img src='/icons/trends.png' />
+                </div>
 
                 {<div className='phone-trends'>
                     <Trends data={trends} />
