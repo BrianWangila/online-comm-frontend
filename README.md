@@ -7,16 +7,21 @@ This application can be used to access different varieties of online shops all u
 
 <p align="center"><img src="https://img.shields.io/github/issues/Aimkeys-Sir/online-comm-frontend" alt="shields"><img src="https://img.shields.io/github/forks/Aimkeys-Sir/online-comm-frontend" alt="shields"><img src="https://img.shields.io/github/stars/Aimkeys-Sir/online-comm-frontend" alt="shields"><img src="https://img.shields.io/github/license/Aimkeys-Sir/online-comm-frontend" alt="shields"></p>
 
+<h2>Contributed by;</h2>
+
+
 <h2>🚀 Demo</h2>
 
 [https:](https:)
 
 <h2>Project Screenshots:</h2>
 
+<p align="center"><img src="/public/images/screen1.png"></p>
+
 <h2>🧐 Features</h2>
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
 Here're some of the project's best features:
 
 The page will reload if you make edits.\
@@ -24,27 +29,27 @@ You will also see any lint errors in the console.
 *   News about various categories delivered in form of stories
 *   New from over 9 distinct categories
 
+<h2>Requirements:</h2>
+ * Access to a computer, laptop or phone 
+ * Access to a computer, laptop or phone
+ * Ruby v.2.7.4
+ * Rails v.7.0.4
+ * NVM installed in you machine
+ * Access to the internet <br>
+
 <h2>🛠️ Installation Steps:</h2>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-<p>1. Runs the app in the development mode.</p>
-
-```
-npm start
-```
-
-<p>2. Launches the test runner in the interactive watch mode.</p>
-
-```
-npm test
-```
-
-<p>3. Builds the app for production to the build folder.</p>
-
-```
-npm build
-```
+ *****
+ * Clone this repo using this command : git clone "https://github.com/musyoki12/Franhel-Home-Retouch.git"
+ * Unzip the downloaded files in a folder of choice.
+ * Open the index file from the zipped file wih browser of choice but prefferably google chrome.
+ * Open the index file from the zipped file wih browser of choice but preferably google chrome.
+ * Run
+    - npm install --prefix client
+    - bundle install
+    - rails db:migrate
+    - rails db:seed
+ *****
 
 <h2>🍰 Contribution Guidelines:</h2>
 
@@ -54,8 +59,16 @@ Please contribute using GitHub Flow. Create a branch add commits and open a pull
 
 Technologies used in the project:
 
-*   React.js
-*   TailwindCSS
+ * Ruby
+    - Rails
+ * Javascript
+    - REACT
+ * SQL/PostreSQL
+ * HTML
+ * CSS
+ * CSS 
+    - Bootstrap
+    - Material-UI
 
 <h2>🛡️ License:</h2>
 
