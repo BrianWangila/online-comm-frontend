@@ -93,6 +93,13 @@
 .star-off {
     filter: invert(98%) sepia(1%) saturate(0%) hue-rotate(182deg) brightness(92%) contrast(92%);
 }
+.products-a{
+    text-decoration: none;
+    color: inherit;
+}
+.products-a:hover{
+    color: inherit;
+}
 
 @media only screen and (min-width:480px) {
     .product-card{

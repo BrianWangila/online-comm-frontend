@@ -71,7 +71,7 @@ const onFailure = (err) => {
 };
 
  function signup(signupdata) {
-  fetch('http://127.0.0.1:3000/signup', {
+  fetch('https://hidden-depths-73217.herokuapp.com/signup', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

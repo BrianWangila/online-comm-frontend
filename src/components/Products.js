@@ -35,7 +35,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
 
 
     useEffect((() => {
-        fetch("http://localhost:3000/trends")
+        fetch("https://hidden-depths-73217.herokuapp.com/trends")
             .then(res => {
                 if (res.ok) {
                     res.json().then(t => {
@@ -53,7 +53,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
 
     useEffect((() => {
         if (user) {
-            fetch("http://localhost:3000/history", {
+            fetch("https://hidden-depths-73217.herokuapp.com/history", {
                 method: "GET",
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -71,7 +71,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
     function handleTrendClick(trend) {
         setActiveTrend(trend.search_term)
         setSearchFor("")
-        fetch(`http://localhost:3000/trends/${trend.id}`)
+        fetch(`https://hidden-depths-73217.herokuapp.com/trends/${trend.id}`)
             .then(res => {
                 if (res.ok) {
                     res.json().then(setProducts)

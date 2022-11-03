@@ -31,7 +31,7 @@ function App() {
   }), [])
 
   useEffect((() => {
-    fetch("http://localhost:3000/toptrends")
+    fetch("https://hidden-depths-73217.herokuapp.com/toptrends")
       .then(res => {
         if (res.ok) {
           res.json().then(setProducts)
@@ -42,7 +42,7 @@ function App() {
 
    let t=localStorage.getItem("jwt")
 
-    fetch("http://localhost:3000/me", {
+    fetch("https://hidden-depths-73217.herokuapp.com/me", {
       method: "GET",
       headers: {
         "Authorization": "Bearer " + t
@@ -60,7 +60,7 @@ function App() {
     function handleSearch(e) {
         e.preventDefault()
         setLoading(true)
-        fetch("http://localhost:3000/search", {
+        fetch("https://hidden-depths-73217.herokuapp.com/search", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
