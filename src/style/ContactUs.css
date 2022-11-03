@@ -1,0 +1,151 @@
+.header-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: black;
+  width: 300px;
+  margin: auto;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+  height: 7vh;
+  border-radius: 15px;
+}
+
+.header-title img {
+  height: 25px;
+  margin-right: 2vw;
+  margin-left: 2vw;
+  border-radius: 50%;
+  border: 2px solid orangered;
+}
+
+.security {
+  border: 1px solid rgba(255, 68, 0, 0.589);
+  height: 22vh;
+  width: 350px;
+  margin: auto;
+  border-radius: 10px;
+  padding: 2vh;
+  margin-bottom: 4vh;
+  background-color: rgba(240, 102, 51, 0.301);
+  
+}
+
+.security-images img {
+  height: 15vh;
+}
+
+  
+.social-media {
+  border: 1px solid rgba(255, 68, 0, 0.589);
+  width: 350px;
+  margin: auto;
+  border-radius: 15px;
+  height: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 4vh;
+}
+
+.social-media .fa-brands {
+  font-size: 40px;
+  text-decoration: none;
+  color: rgb(112, 34, 5);
+}
+
+  
+.contact {
+  border: 1px solid rgba(255, 68, 0, 0.541);
+  width: 350px;
+  margin: auto;
+  border-radius: 15px;
+  height: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 4vh;
+}
+
+.contact h5 {
+  font-size: 15px;
+}
+
+.message {
+  text-align: center;
+  font-size: 10px;
+  width: 95vw;
+  margin: auto;
+}
+
+@media only screen and (min-width: 430px) /*and (max-width: 1000px)*/{
+  .contact-us {
+    min-height: 80vh;
+  }
+  
+  .header-title {
+    width: 500px;
+    height: 10vh;
+  }
+
+  
+  .header-title img {
+    height: 25px;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    border-radius: 50%;
+    border: 2px solid orangered;
+  }
+  
+  .security {
+    border: 1px solid rgba(255, 68, 0, 0.589);
+    height: 22vh;
+    width: 550px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 2vh;
+    margin-bottom: 4vh;
+    background-color: rgba(240, 102, 51, 0.301);
+    
+  }
+  
+  .security-images img {
+    height: 25vh;
+  }
+  
+  .social-media {
+    width: 550px;
+    height: 20vh;
+  }
+  
+  .social-media .fa-brands {
+    font-size: 70px;
+  }
+  
+  .contact {
+    border: 1px solid rgba(255, 68, 0, 0.541);
+    width: 550px;
+    margin: auto;
+    border-radius: 15px;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 4vh;
+  }
+  
+  .contact span {
+    font-weight: 400;
+  
+  }
+
+  .message {
+    text-align: center;
+    font-size: 17px;
+    width: 95vw;
+    margin: auto;
+  }
+
+}
+
