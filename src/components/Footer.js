@@ -1,10 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import '../style/Footer.css'
-// import FontAwesomeIcon from '@fortawesome'
 
 
 
 function Footer() {
+
+  const navigate = useNavigate()
+
+  function handleContact(){
+    navigate('/contact-us')
+  }
 
   return (
     <>
@@ -31,7 +37,7 @@ function Footer() {
           </div>
           <div>
             <ul>
-              <li><a>Contact us</a></li>
+              <li onClick={handleContact}>Contact us</li>
               <li>Billing policy</li>
               <li>Copyright policy</li>
               <li>Our partners</li>

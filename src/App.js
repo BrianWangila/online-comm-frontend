@@ -5,12 +5,10 @@ import SearchPage from './components/SearchPage';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import ForgotPassword from './components/ForgotPassword'
-
+import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
-
 import Products from './components/Products';
 import { useEffect, useState } from 'react';
-
 import { CircularProgress} from '@material-ui/core';
 
 function App() {
@@ -112,6 +110,8 @@ function App() {
         <Route path="/login" element={<Login onLogin={onLogin}/>}/>
         <Route path='/signup' element={<SignUp onLogin={onLogin}/>}/>
         <Route path='/resetpassword' element={<ForgotPassword />} />
+        <Route path='/contact-us' element={<ContactUs user={user}/>} />
+
       </Routes>
     </div>
   );
