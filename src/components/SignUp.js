@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {CssBaseline, TextField, Checkbox, Link, Grid, Box, Typography, Container, Button, FormControlLabel} from '@mui/material/';
+import {TextField, Checkbox, Link, Grid, Box, Typography, Container, Button, FormControlLabel} from '@mui/material/';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import "../style/signup.css"
 import { GoogleLogin } from 'react-google-login';
@@ -42,7 +42,6 @@ export default function SignUp({onLogin}) {
       password: password,
       password_confirmation: password_confirmation
     };
-    console.log(formData);
     event.preventDefault();
     signup(formData)
   }
@@ -88,7 +87,7 @@ const onFailure = (err) => {
   return (
     <div className="signup"> 
     <div>
-      <img id="phone"src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form-image"/>
+      <img id="phone" src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form"/>
     </div> 
     <ThemeProvider theme={theme}>
       <Container  component="main" className="signup-form">
@@ -230,7 +229,7 @@ const onFailure = (err) => {
       </Container>
     </ThemeProvider>
     <div id="laptop">
-      <img src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form-image"/>
+      <img src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form"/>
     </div> 
     </div>
   );
