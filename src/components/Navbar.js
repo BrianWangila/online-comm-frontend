@@ -8,13 +8,19 @@ export default function Navbar({ user,search,handleSearch,setSearch,searchFor })
 
 
     const navigate = useNavigate()
+
+    function toHome(){
+        navigate('/')
+    }
+
+
     function handleLoginOnclick() {
         navigate("/login")
     }
 
     return (
         <div className="navbar">
-            <div className="navbar-logo">
+            <div className="navbar-logo" onClick={toHome}>
                 <img id='logo' src='../images/logo.png' alt='logo' />
             </div>
             {search ||searchFor?<form onSubmit={handleSearch} className='search-page-form' type="submit">
