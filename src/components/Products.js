@@ -99,7 +99,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
         <div className='products'>
 
             <div>
-                {user ?
+                {user && history.length !==0 ?
                     <div className='search-history'>
                         <div>
                             <img src='/icons/history.png' alt='history' />
