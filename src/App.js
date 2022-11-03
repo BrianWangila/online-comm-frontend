@@ -88,7 +88,6 @@ function App() {
     navigate("/")
 
     localStorage.setItem("jwt", JSON.stringify(newUser.jwt))
-    console.log(newUser)
     setUser(newUser)
   }
   return (

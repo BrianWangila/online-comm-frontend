@@ -9,8 +9,10 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
     const [sortBy, setSortBy] = useState("featured")
 
 
-    function sorter(sort) {
-        switch (sort) {
+
+
+    useEffect((()=>{
+        switch (sortBy) {
             case "featured":
                 setProducts(p => [...p.sort((a, b) => a.price_index - b.price_index)])
                 break
@@ -21,16 +23,10 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
                 setProducts(p => [...p.sort((a, b) => b.price_normal - a.price_normal)])
                 break
             case "ratings":
-                console.log("ratings")
                 setProducts(p => [...p.sort((a) =>parseInt(a.ratings)|| 0 ).reverse()])
                 break
-            // default: ""
+            default: 
         }
-    }
-    // console.log(products)
-
-    useEffect((()=>{
-        sorter(sortBy)
     }),[sortBy])
 
 
@@ -67,7 +63,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
                 }
             })
         }
-    }), [user, searchFor])
+    }), [user, searchFor,token])
 
     function handleTrendClick(trend) {
         setActiveTrend(trend.search_term)
@@ -111,7 +107,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
                 {<div className='desktop-trends'>
                     <div className='products-trends'>
                         <p>Trends</p>
-                        <img src='/icons/trends.png' />
+                        <img alt='' src='/icons/trends.png' />
                     </div>
                     <Trends data={trends} />
                 </div>
@@ -120,7 +116,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
             <div>
                 <div className='products-trends for-phone'>
                     <p>Trends</p>
-                    <img src='/icons/trends.png' />
+                    <img alt='' src='/icons/trends.png' />
                 </div>
 
                 {<div className='phone-trends'>

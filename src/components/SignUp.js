@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {TextField, Link, Grid, Box, Typography, Container, Button} from '@mui/material/';
+import {TextField, Checkbox, Link, Grid, Box, Typography, Container, Button, FormControlLabel} from '@mui/material/';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import "../style/signup.css"
 import { GoogleLogin } from 'react-google-login';
@@ -87,7 +87,7 @@ const onFailure = (err) => {
   return (
     <div className="signup"> 
     <div>
-      <img id="phone"src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form"/>
+      <img id="phone" src="https://img.freepik.com/premium-vector/yong-man-woman-shopping-flat-desin-concept-ready-animation-characters-design-elements-with-shopping-bags-boxes_171919-216.jpg?w=2000" alt ="form"/>
     </div> 
     <ThemeProvider theme={theme}>
       <Container  component="main" className="signup-form">

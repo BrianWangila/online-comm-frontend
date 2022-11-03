@@ -18,8 +18,8 @@ function Footer() {
         <div className='footer-murife'>
           <h6>MURIFE</h6>
           <div className='quick-links'>
-            <h7>Quick links</h7>
-            <h7>About us</h7>
+            <h6>Quick links</h6>
+            <h6>About us</h6>
           </div>
         </div>
         <div className='footer-details'>
@@ -38,6 +38,7 @@ function Footer() {
           <div>
             <ul>
               <li onClick={handleContact}>Contact us</li>
+              <li>Contact us</li>
               <li>Billing policy</li>
               <li>Copyright policy</li>
               <li>Our partners</li>
@@ -47,7 +48,7 @@ function Footer() {
         </div>
 
         <hr/>
-
+        with
         <div className='footer-icons'>
           <ul>
           {/* <FontAwesomeIcon icon="fa-brands fa-whatsapp" /> */}
