@@ -92,7 +92,6 @@ const onFailure = (err) => {
     </div> 
     <ThemeProvider theme={theme}>
       <Container  component="main" className="signup-form">
-        {/* <CssBaseline /> */}
           <Typography id="h1" component="h1" variant="h3">
              Create an account
           </Typography>
@@ -106,10 +105,10 @@ const onFailure = (err) => {
             <Grid container spacing={2}>
             <Grid item xs={12} className="form-input">
                 <TextField
+                  className="input-text"
                   autoComplete="given-name"
                   name="name"
                   required
-                 style={{width: 30+"vw"}}
                   id="name"
                   label="Name"
                   value={name}
@@ -118,10 +117,10 @@ const onFailure = (err) => {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  className="input-text"
                   autoComplete="given-name"
                   name="username"
                   required
-                  style={{width: 30+"vw"}}
                   id="username"
                   label="Username"
                   value={username}
@@ -130,8 +129,8 @@ const onFailure = (err) => {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  className="input-text"
                   required
-                  style={{width: 30+"vw"}}
                   id="email"
                   label="Email Address"
                   name="email"
@@ -143,8 +142,8 @@ const onFailure = (err) => {
         
               <Grid item xs={12}>
                 <TextField
+                  className="input-text"
                   required
-                  style={{width: 30+"vw"}}
                   name="location"
                   label="Location"
                   type="location"
@@ -157,8 +156,8 @@ const onFailure = (err) => {
 
               <Grid item xs={12}>
                 <TextField
+                  className="input-text"
                   required
-                  style={{width: 30+"vw"}}
                   name="password"
                   label="Password"
                   type="password"
@@ -170,8 +169,8 @@ const onFailure = (err) => {
                  </Grid>
                  <Grid item xs={12}>
                 <TextField
+                  className="input-text"
                   required
-                  style={{width: 30+"vw"}}
                   name="password_confirmation"
                   label="Confirm Password"
                   type="password"
@@ -181,12 +180,12 @@ const onFailure = (err) => {
                   onChange={(e) => setPassword_confirmation(e.target.value)} placeholder="Confirm Password"
                 />
               </Grid>
-              <Grid item xs={12} >
+              {/* <Grid item xs={12} >
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
                   label="Receive marketing promotions and updates"
                 />
-              </Grid>
+              </Grid> */}
             </Grid>
             
             <div xs={12} className="buttons-flex">

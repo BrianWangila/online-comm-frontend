@@ -17,6 +17,7 @@
 
 <h2>🚀 Demo</h2>
 
+* [Access the Live link](https://murife-shopping.web.app)
 * [Click to view demo video](https:)
 
 <h1>Project Screenshots:</h1>
