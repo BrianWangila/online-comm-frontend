@@ -42,6 +42,7 @@ function App() {
 
    let t=localStorage.getItem("jwt")
 
+
     fetch("https://hidden-depths-73217.herokuapp.com/me", {
       method: "GET",
       headers: {
@@ -60,6 +61,7 @@ function App() {
     function handleSearch(e) {
         e.preventDefault()
         setLoading(true)
+
         fetch("https://hidden-depths-73217.herokuapp.com/search", {
             method: "POST",
             headers: {

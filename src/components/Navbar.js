@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../style/navbar.css'
 import UserAvatar from './UserAvatar'
@@ -16,7 +15,7 @@ export default function Navbar({ user,search,handleSearch,setSearch,searchFor })
     return (
         <div className="navbar">
             <div className="navbar-logo">
-                <img id='logo' src='../images/logo.png' alt='logo' />
+                <img id='logo' src='../images/logo22.png' alt='logo' />
             </div>
             {search ||searchFor?<form onSubmit={handleSearch} className='search-page-form' type="submit">
                 <button><img src="/icons/search.svg" /></button>

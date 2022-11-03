@@ -71,6 +71,7 @@ const onFailure = (err) => {
 };
 
  function signup(signupdata) {
+
   fetch('https://hidden-depths-73217.herokuapp.com/signup', {
       method: "POST",
       headers: {
