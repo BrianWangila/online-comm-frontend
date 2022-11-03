@@ -6,9 +6,37 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
     const [trends, setTrends] = useState([])
     const [activeTrend, setActiveTrend] = useState("")
     const [history, setHistory] = useState([])
-    console.log(history)
+    const [sortBy, setSortBy] = useState("featured")
+
+
+    function sorter(sort) {
+        switch (sort) {
+            case "featured":
+                setProducts(p => [...p.sort((a, b) => a.price_index - b.price_index)])
+                break
+            case "price lh":
+                setProducts(p => [...p.sort((a, b) => a.price_normal - b.price_normal)])
+                break
+            case "price hl":
+                setProducts(p => [...p.sort((a, b) => b.price_normal - a.price_normal)])
+                break
+            case "ratings":
+                console.log("ratings")
+                setProducts(p => [...p.sort((a) =>parseInt(a.ratings)|| 0 ).reverse()])
+                break
+            // default: ""
+        }
+    }
+    // console.log(products)
+
+    useEffect((()=>{
+        sorter(sortBy)
+    }),[sortBy])
+
+
     useEffect((() => {
-        fetch("https://murife-run.herokuapp.com/trends")
+
+        fetch("https://hidden-depths-73217.herokuapp.com/trends")
             .then(res => {
                 if (res.ok) {
                     res.json().then(t => {
@@ -20,9 +48,13 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
             })
     }), [])
 
+    function handleSortBy(e) {
+        setSortBy(e.target.value)
+    }
+
     useEffect((() => {
         if (user) {
-            fetch("https://murife-run.herokuapp.com/history", {
+            fetch("https://hidden-depths-73217.herokuapp.com/history", {
                 method: "GET",
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -40,7 +72,8 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
     function handleTrendClick(trend) {
         setActiveTrend(trend.search_term)
         setSearchFor("")
-        fetch(`https://murife-run.herokuapp.com/trends/${trend.id}`)
+
+        fetch(`https://hidden-depths-73217.herokuapp.com/trends/${trend.id}`)
             .then(res => {
                 if (res.ok) {
                     res.json().then(setProducts)
@@ -64,6 +97,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
     }), [searchFor])
     return (
         <div className='products'>
+
             <div>
                 {user ?
                     <div className='search-history'>
@@ -97,9 +131,21 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
                     <img src='/icons/search.svg' alt='search' />
                     <p>results for {searchFor}</p>
                 </div> : null}
-                <div className='product-cards'>
-                    {products.map((p, index) => <ProductCard key={index} product={p} />)}
+                <div >
+                    <div className='sort-by'>
+                        <label>Sort by: </label>
+                        <select onChange={handleSortBy}>
+                            <option value="featured">Featured</option>
+                            <option value="price lh">Price: Low to high</option>
+                            <option value="price hl">Price: High to low</option>
+                            <option value="ratings">Ratings</option>
+                        </select>
+                    </div>
+                    <div className='product-cards'>
+                        {products.map((p, index) => <ProductCard key={index} product={p} />)}
+                    </div>
                 </div>
+
             </div>
 
         </div>

@@ -31,7 +31,7 @@ function App() {
   }), [])
 
   useEffect((() => {
-    fetch("https://murife-run.herokuapp.com/toptrends")
+    fetch("https://hidden-depths-73217.herokuapp.com/toptrends")
       .then(res => {
         if (res.ok) {
           res.json().then(setProducts)
@@ -42,7 +42,8 @@ function App() {
 
    let t=localStorage.getItem("jwt")
 
-    fetch("https://murife-run.herokuapp.com/me", {
+
+    fetch("https://hidden-depths-73217.herokuapp.com/me", {
       method: "GET",
       headers: {
         "Authorization": "Bearer " + t
@@ -60,7 +61,8 @@ function App() {
     function handleSearch(e) {
         e.preventDefault()
         setLoading(true)
-        fetch("https://murife-run.herokuapp.com/search", {
+
+        fetch("https://hidden-depths-73217.herokuapp.com/search", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

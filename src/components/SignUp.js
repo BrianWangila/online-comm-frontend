@@ -71,7 +71,8 @@ const onFailure = (err) => {
 };
 
  function signup(signupdata) {
-  fetch('https://murife-run.herokuapp.com/signup', {
+
+  fetch('https://hidden-depths-73217.herokuapp.com/signup', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
