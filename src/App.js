@@ -5,7 +5,7 @@ import SearchPage from './components/SearchPage';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import ForgotPassword from './components/ForgotPassword'
-
+import SingleProduct from './components/SingleProduct';
 import Footer from './components/Footer';
 
 import Products from './components/Products';
@@ -110,6 +110,7 @@ function App() {
         <Route path="/login" element={<Login onLogin={onLogin}/>}/>
         <Route path='/signup' element={<SignUp onLogin={onLogin}/>}/>
         <Route path='/resetpassword' element={<ForgotPassword />} />
+        <Route path='/single-product/:id' element={<SingleProduct products={products}/>} />
       </Routes>
     </div>
   );

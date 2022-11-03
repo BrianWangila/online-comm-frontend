@@ -6,7 +6,9 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
     const [trends, setTrends] = useState([])
     const [activeTrend, setActiveTrend] = useState("")
     const [history, setHistory] = useState([])
+    
     console.log(history)
+
     useEffect((() => {
         fetch("https://murife-run.herokuapp.com/trends")
             .then(res => {
@@ -48,6 +50,8 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
             })
     }
 
+    console.log(products)
+
     function Trends({ data }) {
         return (
             <div className='trend-buttons'>
@@ -62,6 +66,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
             setActiveTrend("")
         }
     }), [searchFor])
+
     return (
         <div className='products'>
             <div>
@@ -79,7 +84,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
                         <p>Trends</p>
                         <img src='/icons/trends.png' />
                     </div>
-                    <Trends data={trends} />
+                    <Trends data={trends} id2={trends.id}/>
                 </div>
                 }
             </div>
@@ -98,7 +103,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
                     <p>results for {searchFor}</p>
                 </div> : null}
                 <div className='product-cards'>
-                    {products.map((p, index) => <ProductCard key={index} product={p} />)}
+                    {products.map((p, index) => <ProductCard key={index} id={p.id} product={p} />)}
                 </div>
             </div>
 
