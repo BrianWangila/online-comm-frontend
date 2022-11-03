@@ -15,7 +15,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="#" style={{textDecoration: "none"}}>
         MURIFE
       </Link>{' '}
       {new Date().getFullYear()}
@@ -76,7 +76,6 @@ export default function ForgotPassword() {
                 label="Enter your email Address"
                 name="email"
                 autoComplete="email"
-                autoFocus
               />
               <Button
                 type="submit"
@@ -88,8 +87,9 @@ export default function ForgotPassword() {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="login" variant="body2">
-                    Navigate to Login
+                  Navigate to
+                  <Link href="login" variant="body2" style={{color: "orangered", textDecoration: "none"}}>
+                     {" Login"}
                   </Link>
                 </Grid>
               </Grid>

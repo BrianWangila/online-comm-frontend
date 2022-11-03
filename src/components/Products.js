@@ -35,6 +35,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
 
 
     useEffect((() => {
+
         fetch("https://hidden-depths-73217.herokuapp.com/trends")
             .then(res => {
                 if (res.ok) {
@@ -71,6 +72,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
     function handleTrendClick(trend) {
         setActiveTrend(trend.search_term)
         setSearchFor("")
+
         fetch(`https://hidden-depths-73217.herokuapp.com/trends/${trend.id}`)
             .then(res => {
                 if (res.ok) {

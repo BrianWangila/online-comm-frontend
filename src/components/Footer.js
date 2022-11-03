@@ -1,6 +1,6 @@
 import React from 'react'
 import '../style/Footer.css'
-// import FontAwesomeIcon from ''
+// import FontAwesomeIcon from '@fortawesome'
 
 
 
@@ -18,7 +18,7 @@ function Footer() {
         </div>
         <div className='footer-details'>
           <div className='para'>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p> Murife is here to make your online shopping experience easy and flawless as we help you decide on the best product to purchase from the best online shops.</p>
           </div>
           <div>
             <ul>
@@ -31,7 +31,7 @@ function Footer() {
           </div>
           <div>
             <ul>
-              <li>Contact us</li>
+              <li><a>Contact us</a></li>
               <li>Billing policy</li>
               <li>Copyright policy</li>
               <li>Our partners</li>
@@ -45,10 +45,10 @@ function Footer() {
         <div className='footer-icons'>
           <ul>
           {/* <FontAwesomeIcon icon="fa-brands fa-whatsapp" /> */}
-            <li><i class="fa-brands fa-whatsapp"></i></li>
-            <li><i class="fa-brands fa-twitter"></i></li>
-            <li><i class="fa-brands fa-facebook"></i></li>
-            <li><i class="fa-brands fa-instagram"></i></li>
+            <li><a className="fa-brands fa-whatsapp" href='https://www.whatsapp.com/' target = "_blank"></a></li>
+            <li><a className="fa-brands fa-twitter" href='https://twitter.com/' target = "_blank"></a></li>
+            <li><a className="fa-brands fa-facebook" href='https://web.facebook.com/' target = "_blank"></a></li>
+            <li><a className="fa-brands fa-instagram" href='https://www.instagram.com/' target = "_blank"></a></li>
           </ul>
           <p>All rights reserved @2022</p>
         </div>
@@ -57,4 +57,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default Footer;

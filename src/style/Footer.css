@@ -40,6 +40,11 @@
   display: none;
 }
 
+.footer-icons a {
+  color: white;
+  text-decoration: none;
+}
+
 
 @media only screen and (min-width: 430px) /*and (max-width: 1000px)*/{
  
@@ -107,6 +112,11 @@
 
   .footer-details li {
     list-style: none;
+  }
+
+  .footer-icons a {
+    color: white;
+    text-decoration: none;
   }
 
   .footer-details .para {
