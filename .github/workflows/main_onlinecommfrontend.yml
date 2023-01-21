@@ -23,6 +23,8 @@ jobs:
 
       - name: npm install, build, and test
         run: |
+          echo '/* eslint-disable */'
+          eslint .
           npm install --legacy-peer-deps
           npm run build --if-present
           npm run test --if-present
