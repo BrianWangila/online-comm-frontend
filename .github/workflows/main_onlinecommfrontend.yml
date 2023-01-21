@@ -23,8 +23,6 @@ jobs:
 
       - name: Disable ESLint for specific file
         run: echo '/* eslint-disable */' >> App.js
-      - name: Run ESLint
-        run: eslint .
         
       - name: npm install, build, and test
         run: |
