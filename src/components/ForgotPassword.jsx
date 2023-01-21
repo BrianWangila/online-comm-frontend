@@ -42,7 +42,7 @@ export default function ForgotPassword() {
         <img
           id="phone"
           src="https://img.freepik.com/premium-vector/forgot-password_442409-1785.jpg?w=2000"
-          alt="login image"
+          alt="login"
         />
       </div>
       <ThemeProvider theme={theme}>
