@@ -5,8 +5,6 @@ import SearchPage from './components/SearchPage';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import ForgotPassword from './components/ForgotPassword'
-// import ContactUs from './components/ContactUs';
-// import Footer from './components/Footer';
 import Products from './components/Products';
 import { useEffect, useState } from 'react';
 import { CircularProgress} from '@material-ui/core';
@@ -103,13 +101,11 @@ function App() {
             <Navbar user={user} handleSearch={handleSearch} search={search} setSearch={setSearch} searchFor={searchFor}/>
             {search || searchFor?null:<SearchPage handleSearch={handleSearch} search={search} setSearch={setSearch} />}
             {products ? <Products setSearchFor={setSearchFor} searchFor={searchFor} products={products} setProducts={setProducts} user={user} token={token}/> : null}
-//             <Footer />
           </>
         }></Route>
         <Route path="/login" element={<Login onLogin={onLogin}/>}/>
         <Route path='/signup' element={<SignUp onLogin={onLogin}/>}/>
         <Route path='/resetpassword' element={<ForgotPassword />} />
-//         <Route path='/contact-us' element={<ContactUs user={user}/>} />
 
       </Routes>
     </div>
