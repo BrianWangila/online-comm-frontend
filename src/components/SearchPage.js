@@ -10,7 +10,7 @@ export default function SearchPage({handleSearch,search,setSearch}) {
                     <div>Don't run around, make an informed decision</div>
                 </div>
                 <form onSubmit={handleSearch} className='search-page-form' type="submit">
-                    <button><img src="/icons/search.svg" /></button>
+                    <button><img src="/icons/search.svg" alt="icons"/></button>
                     <input value={search} onChange={(e) => setSearch(e.target.value)} type={"text"} placeholder="Search for anything" />
                     {search === "" ? null : <label onClick={() => setSearch("")}><img id='search-cancel' src='/icons/cancel.svg' alt="search"/></label>}
                 </form>
