@@ -80,7 +80,7 @@ function signin(signindata) {
         <img
           id="phone-img"
           src="https://images.assetsdelivery.com/compings_v2/liravega258/liravega2581810/liravega258181000007.jpg"
-          alt="login image"
+          alt="login"
         />
       </div>
       <ThemeProvider theme={theme} className="themeprovider-login">
