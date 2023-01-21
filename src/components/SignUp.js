@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {TextField, Checkbox, Link, Grid, Box, Typography, Container, Button, FormControlLabel} from '@mui/material/';
+import {TextField, Link, Grid, Box, Typography, Container, Button} from '@mui/material/';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import "../style/signup.css"
 import { GoogleLogin } from 'react-google-login';
