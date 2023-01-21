@@ -27,7 +27,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
                 break
             default: 
         }
-    }),[sortBy])
+    }))
 
 
     useEffect((() => {
@@ -42,7 +42,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
 
                 }
             })
-    }), [sortBy])
+    }), [])
 
     function handleSortBy(e) {
         setSortBy(e.target.value)
