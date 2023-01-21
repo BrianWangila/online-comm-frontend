@@ -52,10 +52,10 @@ function Footer() {
         <div className='footer-icons'>
           <ul>
           {/* <FontAwesomeIcon icon="fa-brands fa-whatsapp" /> */}
-            <li><a className="fa-brands fa-whatsapp" href='https://www.whatsapp.com/' target = "_blank"></a></li>
-            <li><a className="fa-brands fa-twitter" href='https://twitter.com/' target = "_blank"></a></li>
-            <li><a className="fa-brands fa-facebook" href='https://web.facebook.com/' target = "_blank"></a></li>
-            <li><a className="fa-brands fa-instagram" href='https://www.instagram.com/' target = "_blank"></a></li>
+            <li><a className="fa-brands fa-whatsapp" href='https://www.whatsapp.com/' target = "_blank" rel="noopener noreferrer"></a></li>
+            <li><a className="fa-brands fa-twitter" href='https://twitter.com/' target = "_blank" rel="noopener noreferrer"></a></li>
+            <li><a className="fa-brands fa-facebook" href='https://web.facebook.com/' target = "_blank" rel="noopener noreferrer"></a></li>
+            <li><a className="fa-brands fa-instagram" href='https://www.instagram.com/' target = "_blank" rel="noopener noreferrer"></a></li>
           </ul>
           <p>All rights reserved @2022</p>
         </div>
