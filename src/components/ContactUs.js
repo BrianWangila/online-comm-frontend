@@ -28,12 +28,12 @@ function ContactUs({user}) {
         <h4>
           Reach out to us through any of <br/> our social media platforms
         </h4>
-        <div className='social-media'>
-          <a className="fa-brands fa-whatsapp" href='https://www.whatsapp.com/' target = "_blank" rel="noopener noreferrer"></a>
-          <a className="fa-brands fa-twitter" href='https://twitter.com/' target = "_blank" rel="noopener noreferrer"></a>
-          <a className="fa-brands fa-facebook" href='https://web.facebook.com/' target = "_blank" rel="noopener noreferrer"></a>
-          <a className="fa-brands fa-instagram" href='https://www.instagram.com/' target = "_blank" rel="noopener noreferrer"></a>
-        </div>
+//         <div className='social-media'>
+//           <a className="fa-brands fa-whatsapp" href='https://www.whatsapp.com/' target = "_blank" rel="noopener noreferrer"></a>
+//           <a className="fa-brands fa-twitter" href='https://twitter.com/' target = "_blank" rel="noopener noreferrer"></a>
+//           <a className="fa-brands fa-facebook" href='https://web.facebook.com/' target = "_blank" rel="noopener noreferrer"></a>
+//           <a className="fa-brands fa-instagram" href='https://www.instagram.com/' target = "_blank" rel="noopener noreferrer"></a>
+//         </div>
 
         <h4><span style={{color:"orangered"}}>OR</span> Give any one of us a call...</h4>
         <div className='contact'>
