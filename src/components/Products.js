@@ -42,7 +42,7 @@ export default function Products({ products, searchFor, setSearchFor, setProduct
 
                 }
             })
-    }), [])
+    }), [sortBy])
 
     function handleSortBy(e) {
         setSortBy(e.target.value)
