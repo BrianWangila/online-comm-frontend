@@ -26,7 +26,7 @@ export default function Navbar({ user,search,handleSearch,setSearch,searchFor })
             {search ||searchFor?<form onSubmit={handleSearch} className='search-page-form' type="submit">
                 <button><img alt='' src="/icons/search.svg" /></button>
                 <input value={search} onChange={(e) => setSearch(e.target.value)} type={"text"} placeholder="Search for anything" autoFocus />
-                {search === "" ? null : <label onClick={() => setSearch("")}><img id='search-cancel' src='/icons/cancel.svg' /></label>}
+                {search === "" ? null : <label onClick={() => setSearch("")}><img id='search-cancel' src='/icons/cancel.svg' alt = "search"/></label>}
             </form>:null}
             {user ?
                 <div className='user-avatar' >
