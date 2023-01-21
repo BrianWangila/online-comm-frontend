@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import '../style/search-page.css'
 
 export default function SearchPage({handleSearch,search,setSearch}) {
